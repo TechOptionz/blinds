@@ -1,0 +1,1 @@
+export function deliveryConfigured() { return Boolean(process.env.RESEND_API_KEY && process.env.ENQUIRY_FROM && process.env.ENQUIRY_TO && (process.env.NODE_ENV !== 'production' || (process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN))); }

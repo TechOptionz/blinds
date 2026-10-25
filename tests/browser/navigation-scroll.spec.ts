@@ -1,0 +1,23 @@
+import { test, expect } from '@playwright/test';
+test('page links open at the top while section shortcuts retain their targets', async ({ page }) => {
+  await page.setViewportSize({ width:1440,height:950 });
+  await page.goto('/curtains');
+  await page.locator('.curtain-category-copy').last().getByRole('link').click();
+  await expect(page).toHaveURL(/layered-curtains$/);
+  await expect.poll(() => page.evaluate(() => window.scrollY)).toBe(0);
+  await page.locator('.section-cta').getByRole('link').click();
+  await expect(page).toHaveURL(/contact\?product=layered-curtains$/);
+  await expect.poll(() => page.evaluate(() => window.scrollY)).toBe(0);
+  await page.locator('footer nav').getByRole('link',{name:'Our Blinds',exact:true}).click();
+  await expect(page).toHaveURL(/\/blinds$/);
+  await expect.poll(() => page.evaluate(() => window.scrollY)).toBe(0);
+  await page.getByRole('link',{name:'Compare the Styles'}).click();
+  await expect(page).toHaveURL(/#compare-styles$/);
+  await expect.poll(() => page.evaluate(() => window.scrollY)).toBeGreaterThan(500);
+  await page.setViewportSize({width:390,height:844});
+  await page.getByRole('button',{name:'Menu',exact:true}).click();
+  await page.locator('#site-menu a[href="/about"]').click();
+  await expect(page).toHaveURL(/\/about$/);
+  await expect(page.locator('#site-menu')).not.toBeVisible();
+  await expect.poll(() => page.evaluate(() => window.scrollY)).toBe(0);
+});
