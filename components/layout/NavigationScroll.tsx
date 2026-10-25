@@ -11,14 +11,24 @@ export function NavigationScroll() {
   useLayoutEffect(() => {
     if (previous.current === route) return;
     previous.current = route;
-    // Explicit section links retain their intended anchor navigation.
     if (window.location.hash) return;
-    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-    // Next's focus/scroll handling and layout effects finish in the same commit.
-    const frame = requestAnimationFrame(() => {
-      if (!window.location.hash) window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-    });
-    return () => cancelAnimationFrame(frame);
+    const reset = () => {
+      if (window.location.hash) return;
+      const html = document.documentElement;
+      const prev = html.style.scrollBehavior;
+      html.style.scrollBehavior = 'auto';
+      window.scrollTo(0, 0);
+      html.scrollTop = 0;
+      document.body.scrollTop = 0;
+      html.style.scrollBehavior = prev;
+    };
+    reset();
+    const timer = setTimeout(reset, 10);
+    const frame = requestAnimationFrame(reset);
+    return () => {
+      clearTimeout(timer);
+      cancelAnimationFrame(frame);
+    };
   }, [route]);
   return null;
 }
