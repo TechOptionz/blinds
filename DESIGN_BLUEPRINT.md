@@ -1,6 +1,6 @@
-# JUST BLINDS — DESIGN BLUEPRINT
+# SCREENS N BLINDS — DESIGN BLUEPRINT
 
-> **Version:** 1.0 · **Status:** Implementation-ready creative direction · **Brand:** Just Blinds (working name)
+> **Version:** 1.0 · **Status:** Implementation-ready creative direction · **Brand:** Screens N Blinds (working name)
 >
 > **Purpose:** Give Codex enough design, interaction, layout, and engineering direction to produce a genuinely polished, distinctive, responsive website — not a generic blinds template.
 
@@ -8,7 +8,7 @@
 
 ## 01 — The brief, in one minute
 
-Build **Just Blinds** as a premium-looking, minimalist **blinds showroom and enquiry website** for a new business. It should feel like a contemporary interiors brand: striking residential photography, confident art direction, generous negative space, beautiful typography, polished scroll transitions, and exceptionally clear enquiry pathways.
+Build **Screens N Blinds** as a premium-looking, minimalist **blinds showroom and enquiry website** for a new business. It should feel like a contemporary interiors brand: striking residential photography, confident art direction, generous negative space, beautiful typography, polished scroll transitions, and exceptionally clear enquiry pathways.
 
 **Primary inspiration:** [Urban Window Coverings](https://www.urbanwindowcoverings.au/). **Reference case study:** [Rhythm Digital — Urban Window Coverings](https://www.rhythmdigital.com.au/projects/urban-window-coverings).
 
@@ -26,7 +26,7 @@ The reference agency explicitly describes the project as using **large photograp
 
 | Item | Direction |
 |---|---|
-| Working brand | **Just Blinds** |
+| Working brand | **Screens N Blinds** |
 | Positioning | A design-conscious window-coverings business with a carefully edited blinds range |
 | Personality | Calm, confident, welcoming, refined — never snobbish |
 | Audience | People refreshing a room, furnishing a home, or exploring window-covering options |
@@ -37,7 +37,7 @@ The reference agency explicitly describes the project as using **large photograp
 
 ### Wordmark / identity
 
-Create an elegant **typographic wordmark**, not a complicated emblem. Primary lock-up: `JUST BLINDS`, uppercase or carefully spaced title case. Use clean letterforms with slightly adjusted tracking; give **JUST** a modest lighter visual weight than **BLINDS**, or keep both equal. Optionally introduce a very subtle single-line motif suggesting a lowered blind, but only if it remains recognisable at 24 px. Provide dark-on-light and light-on-dark versions. Use text/SVG, never a blurry screenshot.
+Create an elegant **typographic wordmark**, not a complicated emblem. Primary lock-up: `SCREENS N BLINDS`, uppercase or carefully spaced title case. Use clean letterforms with slightly adjusted tracking; give **JUST** a modest lighter visual weight than **BLINDS**, or keep both equal. Optionally introduce a very subtle single-line motif suggesting a lowered blind, but only if it remains recognisable at 24 px. Provide dark-on-light and light-on-dark versions. Use text/SVG, never a blurry screenshot.
 
 **Do not claim this name is trademark-cleared or the domain is available.** Branding is provisional.
 
@@ -140,8 +140,8 @@ Build from central data files; one source of truth for product names, slugs, ima
 
 ### 02. Editorial introduction (paper background)
 
-- Asymmetric two-column split. Small left eyebrow `THE JUST BLINDS APPROACH`; dramatic heading right: **Light changes everything.**
-- One succinct supporting paragraph, plus minimal text-link `Discover Just Blinds ↗`.
+- Asymmetric two-column split. Small left eyebrow `THE SCREENS N BLINDS APPROACH`; dramatic heading right: **Light changes everything.**
+- One succinct supporting paragraph, plus minimal text-link `Discover Screens N Blinds ↗`.
 - Animate heading opacity/translate a little on entrance; do not pin here.
 
 ### 03. Curated collection / interactive product showcase
@@ -187,7 +187,7 @@ Build from central data files; one source of truth for product names, slugs, ima
 
 ### 08. Footer
 
-- Large `JUST BLINDS` wordmark line; navigation and three confirmed contact methods, if supplied.
+- Large `SCREENS N BLINDS` wordmark line; navigation and three confirmed contact methods, if supplied.
 - Contact details **must not be invented**; hide unconfigured channels.
 - Include copyright using dynamic year; no fake ABN, location, rating, awards, partner logos, reviews, or social icons.
 
@@ -277,7 +277,7 @@ Use `next/image`, responsive `sizes`, explicit dimensions to eliminate CLS. Prio
 **Preferred stack:** Next.js App Router + TypeScript + Tailwind CSS + minimal GSAP/ScrollTrigger + React Hook Form/Zod for form if useful. Deployable to Vercel. Use semantic HTML, server components by default, client components only where interaction requires them.
 
 ```text
-just-blinds/
+screensnblinds/
 ├─ app/
 │  ├─ page.tsx
 │  ├─ blinds/page.tsx
@@ -374,7 +374,7 @@ Do not simply shrink desktop. Make **deliberate mobile compositions**:
 
 ### Copy-paste kickoff for Codex
 
-> Build the **Just Blinds** site using `DESIGN_BLUEPRINT.md` as the exact visual/interaction brief and `WEBSITE_CONTENT.md` as the central copy and business-data specification. Our inspiration is the **overall visual quality** of urbanwindowcoverings.au: premium photography, charcoal/white editorial design, dark/light scrolling sequences, and a full-screen menu. Create an ORIGINAL, exceptionally polished design, not a pixel clone. Prioritise a cinematic hero, asymmetric section layouts, unusually good typography, image-driven product reveals, and extremely smooth mobile-responsive scroll effects. Follow the MVP routes and data architecture; use real semantic pages and functional links. Never fabricate testimonials, addresses, phone numbers, years of experience, project photos or form success. Implement or flag unconfigured email delivery as specified. Review desktop/mobile screenshots, run lint/typecheck/build, and keep iterating until it feels like a high-end design studio built it.
+> Build the **Screens N Blinds** site using `DESIGN_BLUEPRINT.md` as the exact visual/interaction brief and `WEBSITE_CONTENT.md` as the central copy and business-data specification. Our inspiration is the **overall visual quality** of urbanwindowcoverings.au: premium photography, charcoal/white editorial design, dark/light scrolling sequences, and a full-screen menu. Create an ORIGINAL, exceptionally polished design, not a pixel clone. Prioritise a cinematic hero, asymmetric section layouts, unusually good typography, image-driven product reveals, and extremely smooth mobile-responsive scroll effects. Follow the MVP routes and data architecture; use real semantic pages and functional links. Never fabricate testimonials, addresses, phone numbers, years of experience, project photos or form success. Implement or flag unconfigured email delivery as specified. Review desktop/mobile screenshots, run lint/typecheck/build, and keep iterating until it feels like a high-end design studio built it.
 
 ---
 
@@ -382,4 +382,4 @@ Do not simply shrink desktop. Make **deliberate mobile compositions**:
 
 - **Observed from public site content:** Urban Window Coverings showcases a large editorial homepage, individual service/category pages, interior photographs and an enquiry path: https://www.urbanwindowcoverings.au/
 - **Explicitly confirmed by the design agency:** charcoal/white aesthetic, large photography, dark/light scrolling transitions, full-screen menu, CMS-backed project content and enquiry forms: https://www.rhythmdigital.com.au/projects/urban-window-coverings
-- **Design choices newly proposed for Just Blinds:** brand colours, fonts, layout measurements, animation timings, sitemap, UX, technology stack and all copy. These are intentional implementation decisions rather than an extraction of a site's proprietary files.
+- **Design choices newly proposed for Screens N Blinds:** brand colours, fonts, layout measurements, animation timings, sitemap, UX, technology stack and all copy. These are intentional implementation decisions rather than an extraction of a site's proprietary files.

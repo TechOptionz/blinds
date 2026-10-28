@@ -1,6 +1,6 @@
-# JUST BLINDS — WEBSITE CONTENT & CONTENT MODEL
+# SCREENS N BLINDS — WEBSITE CONTENT & CONTENT MODEL
 
-> **Version:** 1.0 · **Brand:** Just Blinds (working name) · **Status:** High-quality draft copy for Codex implementation; factual business details and offerings require confirmation.
+> **Version:** 1.0 · **Brand:** Screens N Blinds (working name) · **Status:** High-quality draft copy for Codex implementation; factual business details and offerings require confirmation.
 >
 > **Use with:** [`DESIGN_BLUEPRINT.md`](./DESIGN_BLUEPRINT.md). This file controls the words, product labels, navigation text, form microcopy, asset inventory, and what must never be invented.
 
@@ -8,7 +8,7 @@
 
 ## 01 — Brand and messaging
 
-**Display name:** Just Blinds
+**Display name:** Screens N Blinds
 
 **Suggested descriptor:** Considered window coverings.
 
@@ -18,7 +18,7 @@
 
 **Core idea:** A window covering is part of the room's architecture and atmosphere, not just something that blocks light. Lead with **light, privacy, texture, simplicity, design**.
 
-**Do not imply:** Just Blinds is already a long-established firm, award winner, Australian manufacturer, family business, or a company that offers measuring/fitting, a showroom, free samples, warranties, motorisation, or free installation **until the owner confirms those claims**.
+**Do not imply:** Screens N Blinds is already a long-established firm, award winner, Australian manufacturer, family business, or a company that offers measuring/fitting, a showroom, free samples, warranties, motorisation, or free installation **until the owner confirms those claims**.
 
 **Preferred CTA vocabulary:** `Explore Our Blinds` · `Request a Quote` · `Explore This Style` · `View Inspiration` · `Get in Touch`.
 
@@ -30,7 +30,7 @@ Keep these settings in a typed config (`content/site.ts` or `content/site.json`)
 
 ```yaml
 brand:
-  displayName: "Just Blinds"
+  displayName: "Screens N Blinds"
   descriptor: "Considered window coverings."
   status: "working-name"
 
@@ -80,7 +80,7 @@ leadDelivery:
 
 **Header**
 
-- Logo: `JUST BLINDS`
+- Logo: `SCREENS N BLINDS`
 - Nav: `Home` · `Our Blinds` · `Gallery` · `About` · `Contact`
 - Primary CTA: `Request a Quote`
 - Mobile control: `Menu` / `Close menu`
@@ -94,12 +94,12 @@ leadDelivery:
 
 **Footer**
 
-Large wordmark: `JUST BLINDS`  
+Large wordmark: `SCREENS N BLINDS`  
 Tagline: `A better view begins with the details.`  
 Nav: `Our Blinds · Gallery · About · Contact`  
 Contact heading: `Start a conversation`  
 Contact detail: show **only** verified email/phone/social from configuration.  
-Copyright: `© {currentYear} Just Blinds. All rights reserved.`  
+Copyright: `© {currentYear} Screens N Blinds. All rights reserved.`  
 Footer small print: `Product availability and services may vary. Please enquire for details.` (use if needed).
 
 No address, fake phone, fabricated social handles or unnecessary newsletter signup.
@@ -132,7 +132,7 @@ Wide sunlit room with a **clearly identifiable blind**. Allow negative space for
 
 ### Intro / editorial statement
 
-**Eyebrow:** `THE JUST BLINDS APPROACH`
+**Eyebrow:** `THE SCREENS N BLINDS APPROACH`
 
 **H2:** `Light changes everything.`
 
@@ -198,7 +198,7 @@ Wide sunlit room with a **clearly identifiable blind**. Allow negative space for
 
 **CTA:** `View Inspiration Gallery` → `/gallery`
 
-**Integrity note:** These are **inspiration images**, not `Our Projects`, unless actual project photographs supplied by Just Blinds are approved for that description.
+**Integrity note:** These are **inspiration images**, not `Our Projects`, unless actual project photographs supplied by Screens N Blinds are approved for that description.
 
 ### Simple three-step guide
 
@@ -338,7 +338,7 @@ All pages share components: `eyebrow / H1 / intro / hero image / feature heading
 - `The beauty of natural daylight.`
 - `Where comfort meets clean design.`
 
-**Photo requirement:** use photography owned/licensed for the website. If using licensed inspirational stock, label it `Inspiration` and never imply that Just Blinds designed or installed the room.
+**Photo requirement:** use photography owned/licensed for the website. If using licensed inspirational stock, label it `Inspiration` and never imply that Screens N Blinds designed or installed the room.
 
 **Bottom CTA H2:** `Inspired by what you see?`  
 **Copy:** `Tell us about your window and the look you're working towards.`  
@@ -348,7 +348,7 @@ All pages share components: `eyebrow / H1 / intro / hero image / feature heading
 
 ## 08 — About page (`/about`)
 
-**Eyebrow:** `ABOUT JUST BLINDS`
+**Eyebrow:** `ABOUT SCREENS N BLINDS`
 
 **H1:** `Simple choices. Beautiful spaces.`
 
@@ -358,7 +358,7 @@ All pages share components: `eyebrow / H1 / intro / hero image / feature heading
 **Section H2:** `A little detail goes a long way.`
 
 **Body:**  
-`Just Blinds is built around a simple idea: window coverings should feel like a natural part of the home, not an afterthought. We focus on clean styles, considered choices and a welcoming place to begin exploring what could work for your space.`
+`Screens N Blinds is built around a simple idea: window coverings should feel like a natural part of the home, not an afterthought. We focus on clean styles, considered choices and a welcoming place to begin exploring what could work for your space.`
 
 **Section H2:** `Style that feels like you.`
 
@@ -372,7 +372,7 @@ All pages share components: `eyebrow / H1 / intro / hero image / feature heading
 - **A personal approach** — `Make room for different styles, spaces and ideas.`
 
 **CTA heading:** `Let's find your starting point.`  
-**CTA:** `Contact Just Blinds` → `/contact`
+**CTA:** `Contact Screens N Blinds` → `/contact`
 
 **Do not add:** fictional founder story, `20 years of experience`, `1000+ happy customers`, fake employees, premises or in-house manufacturing.
 
@@ -440,14 +440,14 @@ Do not state measuring, quotes, fitting, sample times, safety certification or l
 
 | Route | Page title | Description |
 |---|---|---|
-| `/` | `Just Blinds | Beautiful Blinds for Considered Spaces` | `Explore timeless roller, Roman and Venetian blinds, discover interior inspiration and enquire about a look that suits your space.` |
-| `/blinds` | `Our Blinds | Roller, Roman & Venetian | Just Blinds` | `Discover the Just Blinds collection, with clean-lined roller blinds, soft Roman blinds and refined Venetian blinds.` |
-| `/blinds/roller-blinds` | `Roller Blinds | Just Blinds` | `Explore the simple, modern look of roller blinds and find inspiration for a clean-lined window finish.` |
-| `/blinds/roman-blinds` | `Roman Blinds | Just Blinds` | `Discover Roman blinds, defined by softly folded fabric and a timeless, tailored finish.` |
-| `/blinds/venetian-blinds` | `Venetian Blinds | Just Blinds` | `Explore Venetian blinds and discover how crisp horizontal slats bring structure and adjustable light to interiors.` |
-| `/gallery` | `Blinds Inspiration Gallery | Just Blinds` | `Explore interior inspiration with window blinds, thoughtful materials and beautiful natural light.` |
-| `/about` | `About Just Blinds | Thoughtful Window Coverings` | `Discover the design-led thinking behind Just Blinds and our approach to simple, considered interiors.` |
-| `/contact` | `Contact Just Blinds | Enquire About Blinds` | `Tell Just Blinds about your space, explore window-covering ideas or send an enquiry about your preferred style.` |
+| `/` | `Screens N Blinds | Beautiful Blinds for Considered Spaces` | `Explore timeless roller, Roman and Venetian blinds, discover interior inspiration and enquire about a look that suits your space.` |
+| `/blinds` | `Our Blinds | Roller, Roman & Venetian | Screens N Blinds` | `Discover the Screens N Blinds collection, with clean-lined roller blinds, soft Roman blinds and refined Venetian blinds.` |
+| `/blinds/roller-blinds` | `Roller Blinds | Screens N Blinds` | `Explore the simple, modern look of roller blinds and find inspiration for a clean-lined window finish.` |
+| `/blinds/roman-blinds` | `Roman Blinds | Screens N Blinds` | `Discover Roman blinds, defined by softly folded fabric and a timeless, tailored finish.` |
+| `/blinds/venetian-blinds` | `Venetian Blinds | Screens N Blinds` | `Explore Venetian blinds and discover how crisp horizontal slats bring structure and adjustable light to interiors.` |
+| `/gallery` | `Blinds Inspiration Gallery | Screens N Blinds` | `Explore interior inspiration with window blinds, thoughtful materials and beautiful natural light.` |
+| `/about` | `About Screens N Blinds | Thoughtful Window Coverings` | `Discover the design-led thinking behind Screens N Blinds and our approach to simple, considered interiors.` |
+| `/contact` | `Contact Screens N Blinds | Enquire About Blinds` | `Tell Screens N Blinds about your space, explore window-covering ideas or send an enquiry about your preferred style.` |
 
 When business location is confirmed, research location-specific keywords and adjust copy naturally. Don't SEO-target Australian suburbs solely because the reference site is Australian. Use full structured data only with verified business attributes.
 
@@ -501,7 +501,7 @@ export const products = [
 | `cta-interior.webp` | P2 | Closing cinematic visual (can reuse crop of an approved asset) |
 | `product-*-detail-*.webp` | P2 | Detail-page imagery that truly matches each blind style |
 
-**Asset metadata** should include path, descriptive alt text, photographer/source, license/permission, product tag, whether photo depicts actual Just Blinds work, and desired desktop/mobile focal point. Don't show broken URLs when assets have not been supplied; use a clearly identified temporary dev substitute, and fail the launch checklist until high-quality approved assets are ready.
+**Asset metadata** should include path, descriptive alt text, photographer/source, license/permission, product tag, whether photo depicts actual Screens N Blinds work, and desired desktop/mobile focal point. Don't show broken URLs when assets have not been supplied; use a clearly identified temporary dev substitute, and fail the launch checklist until high-quality approved assets are ready.
 
 ### Brand photo art direction
 
@@ -517,7 +517,7 @@ export const products = [
 
 Before production, replace or resolve every unresolved fact:
 
-- [ ] Business name `Just Blinds` is approved and availability checks completed.
+- [ ] Business name `Screens N Blinds` is approved and availability checks completed.
 - [ ] Three product categories are confirmed (or replaced with actual available styles).
 - [ ] Email / phone / contact channel supplied; live form actually delivers and is tested.
 - [ ] Business location/service area supplied if local SEO and availability promises are used.
@@ -537,4 +537,4 @@ Before production, replace or resolve every unresolved fact:
 4. For missing business facts, keep safe conditional omissions and clearly document pending values; never auto-fill with a competitor's facts.
 5. Show the owner exactly which facts and image rights are outstanding at handover.
 
-**Final creative principle:** Just Blinds should feel like a boutique interiors website first, while remaining straightforward and credible for a real startup business.
+**Final creative principle:** Screens N Blinds should feel like a boutique interiors website first, while remaining straightforward and credible for a real startup business.

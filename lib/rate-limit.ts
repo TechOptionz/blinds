@@ -1,7 +1,7 @@
 import { createHash } from 'node:crypto';
 const local = new Map<string, { count: number; until: number }>();
 export async function allowEnquiry(ip: string) {
-  const key = `just-blinds:enquiry:${createHash('sha256').update(ip).digest('hex')}`;
+  const key = `screensnblinds:enquiry:${createHash('sha256').update(ip).digest('hex')}`;
   const url = process.env.UPSTASH_REDIS_REST_URL; const token = process.env.UPSTASH_REDIS_REST_TOKEN;
   if (url && token) {
     // Atomic increment and expiry avoid persistent keys when a worker is interrupted.

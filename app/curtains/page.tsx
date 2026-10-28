@@ -5,7 +5,7 @@ import { LinkButton } from '@/components/ui/LinkButton';
 import { SectionCTA } from '@/components/sections/Shared';
 import { pageMetadata } from '@/lib/metadata';
 
-export const metadata = pageMetadata('Curtains | Soft Texture & Considered Interiors', 'Explore curtain inspiration, soft fabrics and layered window treatments. Enquire about curtains for your space with Just Blinds.', '/curtains');
+export const metadata = pageMetadata('Curtains | Soft Texture & Considered Interiors', 'Explore curtain inspiration, soft fabrics and layered window treatments. Enquire about curtains for your space with Screens N Blinds.', '/curtains');
 
 export default function CurtainsPage() {
   return <>

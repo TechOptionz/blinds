@@ -7,7 +7,7 @@ import { images } from '@/content/images';
 import { curtains } from '@/content/curtains';
 import { blindGuidance, blindPriorities, blindFaqs } from '@/content/blinds-guide';
 import { pageMetadata } from '@/lib/metadata';
-export const metadata = pageMetadata('Our Blinds | Roller, Roman & Venetian', 'Discover the Just Blinds collection, with clean-lined roller blinds, soft Roman blinds and refined Venetian blinds.', '/blinds');
+export const metadata = pageMetadata('Our Blinds | Roller, Roman & Venetian', 'Discover the Screens N Blinds collection, with clean-lined roller blinds, soft Roman blinds and refined Venetian blinds.', '/blinds');
 export default function Blinds() {
   return <>
     <section className="collection-intro wrap"><span className="eyebrow" data-reveal>Our collection</span><div className="collection-intro-heading" data-reveal><h1>Blinds with<br />a point of view.</h1><div className="blinds-opening-copy"><p>Considered forms, practical details and finishes that work with your space. Start with the style that speaks to you, then explore what makes it special.</p><LinkButton href="#compare-styles" variant="text">Compare the Styles</LinkButton></div></div><nav className="collection-index" aria-label="Explore blind styles">{products.map(product => <a key={product.slug} href={`#${product.slug}`}><span>{product.index}</span>{product.name}<span aria-hidden="true">↓</span></a>)}</nav></section>

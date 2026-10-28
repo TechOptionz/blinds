@@ -23,13 +23,13 @@ export function Header() {
   }
   return <>
     <header className={`site-header ${pathname === '/' && !scrolled ? 'over-hero' : 'solid-header'}`}>
-      <Link href="/" className="wordmark" aria-label="Just Blinds home">JUST<span>BLINDS</span><i aria-hidden="true" /></Link>
+      <Link href="/" className="wordmark" aria-label="Screens N Blinds home">SCREENS N<span>BLINDS</span><i aria-hidden="true" /></Link>
       <nav className="desktop-nav" aria-label="Main navigation">{navigation.map(item => <Link key={item.href} href={item.href} aria-current={pathname === item.href || (item.href !== '/' && pathname.startsWith(`${item.href}/`)) ? 'page' : undefined}>{item.label}</Link>)}</nav>
       <Link href="/contact" className="header-quote">Request a Quote <span aria-hidden="true">↗</span></Link>
       <button className="menu-trigger" ref={trigger} onClick={open} aria-expanded="false" aria-controls="site-menu">Menu<span aria-hidden="true"><i /><i /></span></button>
     </header>
     <dialog ref={dialog} id="site-menu" className="menu-dialog" aria-label="Main menu" onKeyDown={trapDialogFocus} onCancel={e => { e.preventDefault(); close(); }}>
-      <div className="menu-top"><Link href="/" onClick={close} className="wordmark">JUST<span>BLINDS</span></Link><button onClick={close} autoFocus>Close menu <span aria-hidden="true">×</span></button></div>
+      <div className="menu-top"><Link href="/" onClick={close} className="wordmark">SCREENS N<span>BLINDS</span></Link><button onClick={close} autoFocus>Close menu <span aria-hidden="true">×</span></button></div>
       <nav aria-label="Mobile navigation">{navigation.map((item, i) => <Link key={item.href} href={item.href} onClick={close} style={{ animationDelay: `${i * 55}ms` }}><span className="menu-index">0{i + 1}</span>{item.label}<span className="menu-arrow" aria-hidden="true">↗</span></Link>)}</nav>
       <p>Thoughtful choices for the spaces you love.</p>
     </dialog>

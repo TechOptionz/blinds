@@ -1,5 +1,5 @@
 export const site = {
-  name: 'Just Blinds', descriptor: 'Considered window coverings.',
+  name: 'Screens N Blinds', descriptor: 'Considered window coverings.',
   domain: process.env.NEXT_PUBLIC_SITE_URL || null,
   business: { email: null as string | null, phone: null as string | null, address: null as string | null, city: null as string | null, country: null as string | null, serviceAreas: [] as string[], instagramUrl: null as string | null },
 };
@@ -19,7 +19,7 @@ export const home = {
 };
 export const about = {
   lead: 'We believe the best interiors are made of thoughtful details. A beautifully chosen blind can transform the way light enters a room and how the space feels throughout the day.',
-  detail: 'Just Blinds is built around a simple idea: window coverings should feel like a natural part of the home, not an afterthought. We focus on clean styles, considered choices and a welcoming place to begin exploring what could work for your space.',
+  detail: 'Screens N Blinds is built around a simple idea: window coverings should feel like a natural part of the home, not an afterthought. We focus on clean styles, considered choices and a welcoming place to begin exploring what could work for your space.',
   style: "Some rooms call for a minimal finish. Others come alive with texture. There isn't one perfect look for every window — the most satisfying choice is the one that fits the room and the people living in it.",
   values: [['Considered simplicity', 'Keep the experience clear, calm and easy to explore.'], ['Attention to detail', 'Care about material, texture, proportion and light.'], ['A personal approach', 'Make room for different styles, spaces and ideas.']],
 };

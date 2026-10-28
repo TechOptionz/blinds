@@ -206,7 +206,7 @@ p { max-width:56ch; }
 .footer-top .eyebrow { margin-bottom:10px; color:#b2b6ac; }
 .footer-contact { display:flex; gap:50px; align-items:center; font-size:23px; }
 .footer-top>div>a:not(.footer-contact) { display:block; font-size:13px; }
-.footer-wordmark { font-family:var(--font-heading); font-size:clamp(58px,14.55vw,300px); white-space:nowrap; line-height:1.2; letter-spacing:-.065em; font-weight:500; padding-bottom:30px; }
+.footer-wordmark { font-family:var(--font-heading); font-size:clamp(40px,10vw,206px); white-space:nowrap; line-height:1.2; letter-spacing:-.065em; font-weight:500; padding-bottom:30px; }
 .footer-wordmark>span { font-size:18px; vertical-align:top; display:inline-block; margin:3vw 0 0 1vw; }
 .footer-bottom { border-top:1px solid #ffffff30; padding-top:22px; display:flex; justify-content:space-between; gap:25px; font-size:10px; color:#c0c3ba; }
 .page-heading { padding-top:190px; padding-bottom:85px; }
@@ -426,7 +426,7 @@ p { max-width:56ch; }
   .footer-top>div { margin-top:10px; }
   .footer-top .eyebrow { font-size:9px; }
   .footer-contact { font-size:22px; gap:20px; }
-  .footer-wordmark { font-size:14.2vw; padding-bottom:25px; }
+  .footer-wordmark { font-size:9.8vw; padding-bottom:25px; }
   .footer-wordmark>span { display:none; }
   .footer-bottom { flex-wrap:wrap; column-gap:20px; row-gap:15px; font-size:9px; }
   .footer-bottom>span:nth-child(2) { display:none; }

@@ -1,4 +1,4 @@
-# Just Blinds
+# Screens N Blinds
 
 A complete Next.js App Router website built from `DESIGN_BLUEPRINT.md` and `WEBSITE_CONTENT.md`. Original charcoal-and-warm-white editorial design, Manrope / DM Sans typography, GSAP scroll reveals, architectural illustration placeholders, responsive navigation, product pages, inspiration gallery and a server-validated enquiry integration.
 

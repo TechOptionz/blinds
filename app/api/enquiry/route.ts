@@ -19,7 +19,7 @@ export async function POST(request: Request) {
     if (!await allowEnquiry(ip)) return NextResponse.json({ error: 'Too many enquiries. Please try again in 10 minutes.' }, { status: 429, headers: { 'Retry-After': '600' } });
     const data = parsed.data;
     const product = enquiryOptions.find(p => p.slug === data.product)?.name || 'Exploring options';
-    const result = await fetch('https://api.resend.com/emails', { method: 'POST', headers: { Authorization: `Bearer ${process.env.RESEND_API_KEY}`, 'Content-Type': 'application/json' }, body: JSON.stringify({ from: process.env.ENQUIRY_FROM, to: [process.env.ENQUIRY_TO], reply_to: data.email, subject: `Just Blinds enquiry — ${product}`, text: `Name: ${data.name}\nEmail: ${data.email}\nPhone: ${data.phone || 'Not supplied'}\nInterest: ${product}\n\n${data.message}\n\nConsent to enquiry contact: yes` }), signal: AbortSignal.timeout(10000) });
+    const result = await fetch('https://api.resend.com/emails', { method: 'POST', headers: { Authorization: `Bearer ${process.env.RESEND_API_KEY}`, 'Content-Type': 'application/json' }, body: JSON.stringify({ from: process.env.ENQUIRY_FROM, to: [process.env.ENQUIRY_TO], reply_to: data.email, subject: `Screens N Blinds enquiry — ${product}`, text: `Name: ${data.name}\nEmail: ${data.email}\nPhone: ${data.phone || 'Not supplied'}\nInterest: ${product}\n\n${data.message}\n\nConsent to enquiry contact: yes` }), signal: AbortSignal.timeout(10000) });
     if (!result.ok) throw new Error('Delivery rejected');
     const receipt = await result.json(); if (!receipt.id) throw new Error('Missing delivery receipt');
     return NextResponse.json({ success: true });
