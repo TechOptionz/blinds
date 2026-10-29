@@ -107,10 +107,10 @@ p { max-width:60ch; }
 .hero h1,.hero p,.hero .eyebrow { text-shadow:0 2px 18px rgba(8,22,24,.55),0 1px 3px rgba(8,22,24,.35); }
 /* Hero slideshow */
 .hero-slides { background:#1d3236; }
-.hero-slide { position:absolute; inset:0; opacity:0; transition:opacity .9s ease; }
+.hero-slide { position:absolute; inset:0; opacity:0; transition:opacity .7s ease; }
 .hero-slide.is-active { opacity:1; }
 .hero-slide>.image-frame { position:absolute; inset:0; }
-.hero-slide.is-active>.image-frame { animation:hero-drift 5s ease-out both; }
+.hero-slide.is-active>.image-frame { animation:hero-drift 3.2s ease-out both; }
 @keyframes hero-drift { from { transform:scale(1.07); } to { transform:scale(1); } }
 .hero-slide-controls { position:absolute; z-index:2; right:var(--gutter); bottom:34px; display:flex; align-items:center; gap:14px; padding:8px 10px 8px 16px; border-radius:999px; background:rgba(12,30,33,.38); backdrop-filter:blur(8px); }
 .hero-slide-dots { display:flex; gap:8px; }
@@ -279,7 +279,11 @@ p { max-width:60ch; }
 .mega-thumb { position:relative; display:block; aspect-ratio:4/3; border-radius:12px; overflow:hidden; margin-bottom:14px; box-shadow:0 10px 24px -14px rgba(22,59,64,.5); background:var(--sand-deep); }
 .mega-thumb-layer { position:absolute; inset:0; opacity:0; transform:scale(1.04); transition:opacity .45s var(--ease),transform .7s var(--ease); }
 .mega-thumb-layer.active { opacity:1; transform:none; z-index:1; }
-.mega-col a.active { color:var(--accent-deep); }
+.mega-col a.active:not(.mega-thumb) { color:var(--accent-deep); }
+.mega-col a[aria-current="page"]:not(.mega-thumb) { color:var(--primary); font-weight:600; }
+.mega-head { grid-column:1 / -1; display:flex; align-items:flex-end; justify-content:space-between; gap:24px; padding-bottom:18px; border-bottom:1px solid var(--line); }
+.mega-title { font-size:clamp(40px,4.4vw,64px); line-height:.95; font-weight:600; letter-spacing:-.04em; color:var(--primary); }
+.mega-head .text-link { font-size:14px; margin-bottom:6px; }
 @media (prefers-reduced-motion: reduce) { .mega-thumb-layer { transition:none; transform:none; } }
 .mega-thumb .image-frame { border-radius:12px; }
 .mega-col h4 { font-size:15px; margin-bottom:8px; color:var(--primary); }
