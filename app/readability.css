@@ -22,7 +22,7 @@ p { max-width:62ch; }
 .lead,.hero p,.page-heading p,.collection-intro-heading p,.circle-hero-card p,.intro-split .lead,.split-copy .lead,
 .promo-inner .lead,.section-intro .lead,.cta-inner p,.image-band p,.curtain-detail-intro p,.curtains-hero-copy>p,
 .not-found p,.curtains-section-heading>p,.category-images-heading p,.product-details>div:first-child>p,
-.blind-planning-inner>div>p,.blind-layering p,.curtains-pairing p,.about-intro p,.about-philosophy p,.circle-copy p,
+.blind-planning-inner>div>p,.blind-layering p,.curtains-pairing p,.about-intro p,.about-philosophy p,
 .intro-body p,.product-copy>p:not(.product-teaser) {
   font-size:var(--text-lead); line-height:var(--leading-lead); color:var(--muted);
 }
@@ -35,7 +35,7 @@ p { max-width:62ch; }
 /* Body copy: running text, feature lists, definitions, FAQ answers */
 .split-copy h3+p,.check-list li,.feature-list article p,.blind-range-copy>p,.blind-range-copy dd,.blind-comparison dd,
 .curtain-category-copy>p,.curtain-category-copy dd,.curtains-directions p,.curtains-detail-copy article p,
-.curtain-faq details p,.curtain-detail-notes p,.blind-planning li p,.values p,.form-success p,.contact-layout aside p,
+.curtain-faq details p,.curtain-detail-notes p,.blind-planning li p,.values p,.form-success p,
 .direct-contact p,.menu-dialog>p,.split-copy p:not(.lead):not(.image-note) {
   font-size:var(--text-body); line-height:var(--leading-body);
 }
@@ -51,7 +51,7 @@ p { max-width:62ch; }
 .link-button,.text-link,.header-quote,.header-quote span,.menu-trigger,.collection-index a,.footer-col a,.footer-col span,
 .footer-usp-item,.mega-col a:not(.mega-thumb),.menu-sub a,.gallery-caption,.gallery-filter button,.lightbox-bottom p,
 .direct-contact a,.blind-enquire,.blind-comparison .link-button,.mega-feature .link-button,.related-card .text-link,
-.menu-top button,.lightbox-top button,.form-grid label,.form-notice,.form-status,.consent,.topbar { font-size:var(--text-ui); }
+.menu-top button,.lightbox-top button,.form-grid label,.form-status,.consent,.topbar { font-size:var(--text-ui); }
 .link-button { min-height:52px; padding:13px 30px; }
 .link-button.text,.text-link { min-height:42px; }
 .header-quote { padding:11px 22px; }
@@ -62,7 +62,7 @@ p { max-width:62ch; }
 .form-grid input,.form-grid select,.form-grid textarea { font-size:var(--text-card); }
 .form-grid textarea::placeholder { font-size:var(--text-ui); }
 .form-grid label { line-height:1.5; }
-.form-notice,.form-status { line-height:1.6; }
+.form-status { line-height:1.6; }
 .consent { line-height:1.5; }
 
 /* Header at narrower desktop widths: keep both nav groups clear of the logo */
@@ -103,7 +103,6 @@ h3 { line-height:1.3; }
 /* Paragraph spacing */
 .intro-split .lead { margin-top:18px; }
 .split-copy .lead { margin-top:22px; }
-.circle-copy p { margin:18px 0 20px; }
 .value-card p,.step-card p { margin-top:4px; }
 .curtain-faq details p { padding-bottom:22px; }
 .feature-list article { gap:28px; padding:28px 0; }

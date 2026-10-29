@@ -14,6 +14,7 @@ export function Wordmark({ onClick, priority = false }: { onClick?: () => void; 
 export function Header() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
+  const [closedMenu, setClosedMenu] = useState<string | null>(null);
   const dialog = useRef<HTMLDialogElement>(null);
   const trigger = useRef<HTMLButtonElement>(null);
   const closing = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -32,12 +33,18 @@ export function Header() {
   const items = navigation.filter(item => item.href !== '/');
   const left = items.slice(0, 4); const right = items.slice(4);
   const blur = (event: React.KeyboardEvent<HTMLDivElement>) => { if (event.key === 'Escape') (event.currentTarget.querySelector('a') as HTMLElement | null)?.focus(); };
+  // Hide the mega menu once a link inside it (or its top-level trigger) is clicked; it can reopen after the pointer leaves.
+  const dismiss = (href: string) => (event: React.MouseEvent<HTMLDivElement>) => {
+    if (!(event.target as HTMLElement).closest('a')) return;
+    setClosedMenu(href);
+    (document.activeElement as HTMLElement | null)?.blur();
+  };
   return <>
     <header className={`site-header${scrolled ? ' scrolled' : ''}`}>
       <nav className="header-nav left" aria-label="Main navigation">{left.map(item => {
         const mega = megaMenus[item.href];
         if (!mega) return <Link key={item.href} href={item.href} aria-current={current(item.href)}>{item.label}</Link>;
-        return <div className="nav-item" key={item.href} onKeyDown={blur}>
+        return <div className={`nav-item${closedMenu === item.href ? ' closed' : ''}`} key={item.href} onKeyDown={blur} onClick={dismiss(item.href)} onMouseLeave={() => setClosedMenu(open => open === item.href ? null : open)}>
           <Link href={item.href} aria-current={current(item.href)} aria-haspopup="true">{item.label}<span className="caret" aria-hidden="true" /></Link>
           <div className="mega" style={{ '--cols': mega.columns.length } as React.CSSProperties}><div className="mega-inner">
             {mega.columns.map(column => <div className="mega-col" key={column.heading}><Link href={column.links[0].href} className="mega-thumb" tabIndex={-1} aria-hidden="true"><ImagePlaceholder asset={column.image} sizes="240px" /></Link><h4>{column.heading}</h4>{column.links.map(link => <Link key={link.href} href={link.href}>{link.label}</Link>)}</div>)}
