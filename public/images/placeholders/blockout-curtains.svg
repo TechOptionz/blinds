@@ -56,145 +56,99 @@
       <circle cx="2" cy="2" r="0.8" fill="#1D211F" fill-opacity="0.03"/>
     </pattern>
     
-      <linearGradient id="blockoutFold" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stop-color="#4B4E49"/>
-        <stop offset="35%" stop-color="#666B63"/>
-        <stop offset="70%" stop-color="#555A53"/>
-        <stop offset="100%" stop-color="#3B3E39"/>
+      <linearGradient id="sheerDrape" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#DDD5C4" stop-opacity="0.85"/>
+        <stop offset="35%" stop-color="#F7F3EA" stop-opacity="0.95"/>
+        <stop offset="70%" stop-color="#EAE3D5" stop-opacity="0.88"/>
+        <stop offset="100%" stop-color="#C5BBA7" stop-opacity="0.85"/>
       </linearGradient>
     
   </defs>
-    <!-- Deep Mood Room -->
-    <rect width="1600" height="1100" fill="#DDD7CB"/>
+    <!-- High Ceiling Wall & Wood Floor -->
+    <rect width="1600" height="1100" fill="url(#warmWall)"/>
     <path d="M0 800 L1600 800 L1600 1100 L0 1100 Z" fill="url(#woodFloor)"/>
+    <line x1="0" y1="800" x2="1600" y2="800" stroke="#7E6F5A" stroke-width="2"/>
+    <path d="M140 800 L0 1100 M450 800 L320 1100 M800 800 L760 1100 M1180 800 L1240 1100 M1450 800 L1580 1100" stroke="#8A7A64" stroke-width="1.2" stroke-opacity="0.35"/>
     
-    <!-- Window Behind -->
-    <rect x="520" y="60" width="980" height="740" fill="#D3CABE"/>
-    <rect x="540" y="80" width="940" height="700" fill="url(#windowLight)"/>
+    <!-- Floor-to-Ceiling Picture Window -->
+    <rect x="520" y="60" width="960" height="740" fill="#E2DACB" rx="2"/>
+    <rect x="540" y="80" width="920" height="710" fill="url(#windowLight)"/>
+    <g filter="url(#deepBlur)" opacity="0.45">
+      <ellipse cx="780" cy="500" rx="180" ry="240" fill="#6B785D"/>
+      <ellipse cx="1180" cy="460" rx="240" ry="280" fill="#7D8A6D"/>
+    </g>
+    <!-- Slimline Ceiling Recessed Track -->
+    <rect x="480" y="68" width="1040" height="12" fill="url(#steelMullion)" rx="2"/>
+
+    <!-- Left Curtain Stack -->
     
-    <!-- Substantial Outer Blockout Drapes Framed Across Room -->
+        <path d="M480 80 Q500 70 520 80 L526 800 Q500 815 476 800 Z" fill="url(#sheerDrape)"/>
+        <path d="M500 75 L500 805" stroke="#FFFDF8" stroke-width="2" stroke-opacity="0.4" fill="none"/>
+        <path d="M480 80 L476 800" stroke="#8A7E6B" stroke-width="3" stroke-opacity="0.3" fill="none"/>
+      
+        <path d="M520 80 Q540 70 560 80 L566 800 Q540 815 516 800 Z" fill="url(#sheerDrape)"/>
+        <path d="M540 75 L540 805" stroke="#FFFDF8" stroke-width="2" stroke-opacity="0.4" fill="none"/>
+        <path d="M520 80 L516 800" stroke="#8A7E6B" stroke-width="3" stroke-opacity="0.3" fill="none"/>
+      
+        <path d="M560 80 Q580 70 600 80 L606 800 Q580 815 556 800 Z" fill="url(#sheerDrape)"/>
+        <path d="M580 75 L580 805" stroke="#FFFDF8" stroke-width="2" stroke-opacity="0.4" fill="none"/>
+        <path d="M560 80 L556 800" stroke="#8A7E6B" stroke-width="3" stroke-opacity="0.3" fill="none"/>
+      
+        <path d="M600 80 Q620 70 640 80 L646 800 Q620 815 596 800 Z" fill="url(#sheerDrape)"/>
+        <path d="M620 75 L620 805" stroke="#FFFDF8" stroke-width="2" stroke-opacity="0.4" fill="none"/>
+        <path d="M600 80 L596 800" stroke="#8A7E6B" stroke-width="3" stroke-opacity="0.3" fill="none"/>
+      
+        <path d="M640 80 Q660 70 680 80 L686 800 Q660 815 636 800 Z" fill="url(#sheerDrape)"/>
+        <path d="M660 75 L660 805" stroke="#FFFDF8" stroke-width="2" stroke-opacity="0.4" fill="none"/>
+        <path d="M640 80 L636 800" stroke="#8A7E6B" stroke-width="3" stroke-opacity="0.3" fill="none"/>
+      
+        <path d="M680 80 Q700 70 720 80 L726 800 Q700 815 676 800 Z" fill="url(#sheerDrape)"/>
+        <path d="M700 75 L700 805" stroke="#FFFDF8" stroke-width="2" stroke-opacity="0.4" fill="none"/>
+        <path d="M680 80 L676 800" stroke="#8A7E6B" stroke-width="3" stroke-opacity="0.3" fill="none"/>
+      
+    <!-- Right Curtain Stack -->
     
-        <!-- Pinch Pleat Heading Accent -->
-        <polygon points="466,68 505.42857142857144,68 489.7142857142857,94 481.7142857142857,94" fill="#3D403D"/>
-        <!-- Heavy Fabric Fold -->
-        <path d="M481.7142857142857 94 L489.7142857142857 94 L523.4285714285714 805 Q485.7142857142857 820 452 805 Z" fill="url(#blockoutFold)"/>
-        <!-- Deep Crease Shadow -->
-        <path d="M485.7142857142857 94 L487.7142857142857 810" stroke="#2B2E2C" stroke-width="4" stroke-opacity="0.45" fill="none"/>
-        <path d="M454 805 Q485.7142857142857 820 521.4285714285714 805" stroke="#1D201E" stroke-width="3" stroke-opacity="0.6" fill="none"/>
+        <path d="M1280 80 Q1300 70 1320 80 L1326 800 Q1300 815 1276 800 Z" fill="url(#sheerDrape)"/>
+        <path d="M1300 75 L1300 805" stroke="#FFFDF8" stroke-width="2" stroke-opacity="0.4" fill="none"/>
+        <path d="M1280 80 L1276 800" stroke="#8A7E6B" stroke-width="3" stroke-opacity="0.3" fill="none"/>
       
-        <!-- Pinch Pleat Heading Accent -->
-        <polygon points="517.4285714285714,68 556.8571428571429,68 541.1428571428571,94 533.1428571428571,94" fill="#3D403D"/>
-        <!-- Heavy Fabric Fold -->
-        <path d="M533.1428571428571 94 L541.1428571428571 94 L574.8571428571429 805 Q537.1428571428571 820 503.42857142857144 805 Z" fill="url(#blockoutFold)"/>
-        <!-- Deep Crease Shadow -->
-        <path d="M537.1428571428571 94 L539.1428571428571 810" stroke="#2B2E2C" stroke-width="4" stroke-opacity="0.45" fill="none"/>
-        <path d="M505.42857142857144 805 Q537.1428571428571 820 572.8571428571429 805" stroke="#1D201E" stroke-width="3" stroke-opacity="0.6" fill="none"/>
+        <path d="M1320 80 Q1340 70 1360 80 L1366 800 Q1340 815 1316 800 Z" fill="url(#sheerDrape)"/>
+        <path d="M1340 75 L1340 805" stroke="#FFFDF8" stroke-width="2" stroke-opacity="0.4" fill="none"/>
+        <path d="M1320 80 L1316 800" stroke="#8A7E6B" stroke-width="3" stroke-opacity="0.3" fill="none"/>
       
-        <!-- Pinch Pleat Heading Accent -->
-        <polygon points="568.8571428571429,68 608.2857142857143,68 592.5714285714286,94 584.5714285714286,94" fill="#3D403D"/>
-        <!-- Heavy Fabric Fold -->
-        <path d="M584.5714285714286 94 L592.5714285714286 94 L626.2857142857143 805 Q588.5714285714286 820 554.8571428571429 805 Z" fill="url(#blockoutFold)"/>
-        <!-- Deep Crease Shadow -->
-        <path d="M588.5714285714286 94 L590.5714285714286 810" stroke="#2B2E2C" stroke-width="4" stroke-opacity="0.45" fill="none"/>
-        <path d="M556.8571428571429 805 Q588.5714285714286 820 624.2857142857143 805" stroke="#1D201E" stroke-width="3" stroke-opacity="0.6" fill="none"/>
+        <path d="M1360 80 Q1380 70 1400 80 L1406 800 Q1380 815 1356 800 Z" fill="url(#sheerDrape)"/>
+        <path d="M1380 75 L1380 805" stroke="#FFFDF8" stroke-width="2" stroke-opacity="0.4" fill="none"/>
+        <path d="M1360 80 L1356 800" stroke="#8A7E6B" stroke-width="3" stroke-opacity="0.3" fill="none"/>
       
-        <!-- Pinch Pleat Heading Accent -->
-        <polygon points="620.2857142857142,68 659.7142857142857,68 643.9999999999999,94 635.9999999999999,94" fill="#3D403D"/>
-        <!-- Heavy Fabric Fold -->
-        <path d="M635.9999999999999 94 L643.9999999999999 94 L677.7142857142857 805 Q639.9999999999999 820 606.2857142857142 805 Z" fill="url(#blockoutFold)"/>
-        <!-- Deep Crease Shadow -->
-        <path d="M639.9999999999999 94 L641.9999999999999 810" stroke="#2B2E2C" stroke-width="4" stroke-opacity="0.45" fill="none"/>
-        <path d="M608.2857142857142 805 Q639.9999999999999 820 675.7142857142857 805" stroke="#1D201E" stroke-width="3" stroke-opacity="0.6" fill="none"/>
+        <path d="M1400 80 Q1420 70 1440 80 L1446 800 Q1420 815 1396 800 Z" fill="url(#sheerDrape)"/>
+        <path d="M1420 75 L1420 805" stroke="#FFFDF8" stroke-width="2" stroke-opacity="0.4" fill="none"/>
+        <path d="M1400 80 L1396 800" stroke="#8A7E6B" stroke-width="3" stroke-opacity="0.3" fill="none"/>
       
-        <!-- Pinch Pleat Heading Accent -->
-        <polygon points="671.7142857142858,68 711.1428571428572,68 695.4285714285714,94 687.4285714285714,94" fill="#3D403D"/>
-        <!-- Heavy Fabric Fold -->
-        <path d="M687.4285714285714 94 L695.4285714285714 94 L729.1428571428572 805 Q691.4285714285714 820 657.7142857142858 805 Z" fill="url(#blockoutFold)"/>
-        <!-- Deep Crease Shadow -->
-        <path d="M691.4285714285714 94 L693.4285714285714 810" stroke="#2B2E2C" stroke-width="4" stroke-opacity="0.45" fill="none"/>
-        <path d="M659.7142857142858 805 Q691.4285714285714 820 727.1428571428572 805" stroke="#1D201E" stroke-width="3" stroke-opacity="0.6" fill="none"/>
+        <path d="M1440 80 Q1460 70 1480 80 L1486 800 Q1460 815 1436 800 Z" fill="url(#sheerDrape)"/>
+        <path d="M1460 75 L1460 805" stroke="#FFFDF8" stroke-width="2" stroke-opacity="0.4" fill="none"/>
+        <path d="M1440 80 L1436 800" stroke="#8A7E6B" stroke-width="3" stroke-opacity="0.3" fill="none"/>
       
-        <!-- Pinch Pleat Heading Accent -->
-        <polygon points="723.1428571428571,68 762.5714285714286,68 746.8571428571428,94 738.8571428571428,94" fill="#3D403D"/>
-        <!-- Heavy Fabric Fold -->
-        <path d="M738.8571428571428 94 L746.8571428571428 94 L780.5714285714286 805 Q742.8571428571428 820 709.1428571428571 805 Z" fill="url(#blockoutFold)"/>
-        <!-- Deep Crease Shadow -->
-        <path d="M742.8571428571428 94 L744.8571428571428 810" stroke="#2B2E2C" stroke-width="4" stroke-opacity="0.45" fill="none"/>
-        <path d="M711.1428571428571 805 Q742.8571428571428 820 778.5714285714286 805" stroke="#1D201E" stroke-width="3" stroke-opacity="0.6" fill="none"/>
-      
-        <!-- Pinch Pleat Heading Accent -->
-        <polygon points="774.5714285714286,68 814,68 798.2857142857142,94 790.2857142857142,94" fill="#3D403D"/>
-        <!-- Heavy Fabric Fold -->
-        <path d="M790.2857142857142 94 L798.2857142857142 94 L832 805 Q794.2857142857142 820 760.5714285714286 805 Z" fill="url(#blockoutFold)"/>
-        <!-- Deep Crease Shadow -->
-        <path d="M794.2857142857142 94 L796.2857142857142 810" stroke="#2B2E2C" stroke-width="4" stroke-opacity="0.45" fill="none"/>
-        <path d="M762.5714285714286 805 Q794.2857142857142 820 830 805" stroke="#1D201E" stroke-width="3" stroke-opacity="0.6" fill="none"/>
-      
-    
-        <!-- Pinch Pleat Heading Accent -->
-        <polygon points="1186,68 1225.4285714285713,68 1209.7142857142858,94 1201.7142857142858,94" fill="#3D403D"/>
-        <!-- Heavy Fabric Fold -->
-        <path d="M1201.7142857142858 94 L1209.7142857142858 94 L1243.4285714285713 805 Q1205.7142857142858 820 1172 805 Z" fill="url(#blockoutFold)"/>
-        <!-- Deep Crease Shadow -->
-        <path d="M1205.7142857142858 94 L1207.7142857142858 810" stroke="#2B2E2C" stroke-width="4" stroke-opacity="0.45" fill="none"/>
-        <path d="M1174 805 Q1205.7142857142858 820 1241.4285714285713 805" stroke="#1D201E" stroke-width="3" stroke-opacity="0.6" fill="none"/>
-      
-        <!-- Pinch Pleat Heading Accent -->
-        <polygon points="1237.4285714285713,68 1276.8571428571427,68 1261.142857142857,94 1253.142857142857,94" fill="#3D403D"/>
-        <!-- Heavy Fabric Fold -->
-        <path d="M1253.142857142857 94 L1261.142857142857 94 L1294.8571428571427 805 Q1257.142857142857 820 1223.4285714285713 805 Z" fill="url(#blockoutFold)"/>
-        <!-- Deep Crease Shadow -->
-        <path d="M1257.142857142857 94 L1259.142857142857 810" stroke="#2B2E2C" stroke-width="4" stroke-opacity="0.45" fill="none"/>
-        <path d="M1225.4285714285713 805 Q1257.142857142857 820 1292.8571428571427 805" stroke="#1D201E" stroke-width="3" stroke-opacity="0.6" fill="none"/>
-      
-        <!-- Pinch Pleat Heading Accent -->
-        <polygon points="1288.857142857143,68 1328.2857142857142,68 1312.5714285714287,94 1304.5714285714287,94" fill="#3D403D"/>
-        <!-- Heavy Fabric Fold -->
-        <path d="M1304.5714285714287 94 L1312.5714285714287 94 L1346.2857142857142 805 Q1308.5714285714287 820 1274.857142857143 805 Z" fill="url(#blockoutFold)"/>
-        <!-- Deep Crease Shadow -->
-        <path d="M1308.5714285714287 94 L1310.5714285714287 810" stroke="#2B2E2C" stroke-width="4" stroke-opacity="0.45" fill="none"/>
-        <path d="M1276.857142857143 805 Q1308.5714285714287 820 1344.2857142857142 805" stroke="#1D201E" stroke-width="3" stroke-opacity="0.6" fill="none"/>
-      
-        <!-- Pinch Pleat Heading Accent -->
-        <polygon points="1340.2857142857142,68 1379.7142857142856,68 1364,94 1356,94" fill="#3D403D"/>
-        <!-- Heavy Fabric Fold -->
-        <path d="M1356 94 L1364 94 L1397.7142857142856 805 Q1360 820 1326.2857142857142 805 Z" fill="url(#blockoutFold)"/>
-        <!-- Deep Crease Shadow -->
-        <path d="M1360 94 L1362 810" stroke="#2B2E2C" stroke-width="4" stroke-opacity="0.45" fill="none"/>
-        <path d="M1328.2857142857142 805 Q1360 820 1395.7142857142856 805" stroke="#1D201E" stroke-width="3" stroke-opacity="0.6" fill="none"/>
-      
-        <!-- Pinch Pleat Heading Accent -->
-        <polygon points="1391.7142857142858,68 1431.142857142857,68 1415.4285714285716,94 1407.4285714285716,94" fill="#3D403D"/>
-        <!-- Heavy Fabric Fold -->
-        <path d="M1407.4285714285716 94 L1415.4285714285716 94 L1449.142857142857 805 Q1411.4285714285716 820 1377.7142857142858 805 Z" fill="url(#blockoutFold)"/>
-        <!-- Deep Crease Shadow -->
-        <path d="M1411.4285714285716 94 L1413.4285714285716 810" stroke="#2B2E2C" stroke-width="4" stroke-opacity="0.45" fill="none"/>
-        <path d="M1379.7142857142858 805 Q1411.4285714285716 820 1447.142857142857 805" stroke="#1D201E" stroke-width="3" stroke-opacity="0.6" fill="none"/>
-      
-        <!-- Pinch Pleat Heading Accent -->
-        <polygon points="1443.142857142857,68 1482.5714285714284,68 1466.857142857143,94 1458.857142857143,94" fill="#3D403D"/>
-        <!-- Heavy Fabric Fold -->
-        <path d="M1458.857142857143 94 L1466.857142857143 94 L1500.5714285714284 805 Q1462.857142857143 820 1429.142857142857 805 Z" fill="url(#blockoutFold)"/>
-        <!-- Deep Crease Shadow -->
-        <path d="M1462.857142857143 94 L1464.857142857143 810" stroke="#2B2E2C" stroke-width="4" stroke-opacity="0.45" fill="none"/>
-        <path d="M1431.142857142857 805 Q1462.857142857143 820 1498.5714285714284 805" stroke="#1D201E" stroke-width="3" stroke-opacity="0.6" fill="none"/>
-      
-        <!-- Pinch Pleat Heading Accent -->
-        <polygon points="1494.5714285714284,68 1533.9999999999998,68 1518.2857142857142,94 1510.2857142857142,94" fill="#3D403D"/>
-        <!-- Heavy Fabric Fold -->
-        <path d="M1510.2857142857142 94 L1518.2857142857142 94 L1551.9999999999998 805 Q1514.2857142857142 820 1480.5714285714284 805 Z" fill="url(#blockoutFold)"/>
-        <!-- Deep Crease Shadow -->
-        <path d="M1514.2857142857142 94 L1516.2857142857142 810" stroke="#2B2E2C" stroke-width="4" stroke-opacity="0.45" fill="none"/>
-        <path d="M1482.5714285714284 805 Q1514.2857142857142 820 1549.9999999999998 805" stroke="#1D201E" stroke-width="3" stroke-opacity="0.6" fill="none"/>
+        <path d="M1480 80 Q1500 70 1520 80 L1526 800 Q1500 815 1476 800 Z" fill="url(#sheerDrape)"/>
+        <path d="M1500 75 L1500 805" stroke="#FFFDF8" stroke-width="2" stroke-opacity="0.4" fill="none"/>
+        <path d="M1480 80 L1476 800" stroke="#8A7E6B" stroke-width="3" stroke-opacity="0.3" fill="none"/>
       
 
-    <!-- Travertine Nightstand & Brass Lamp -->
+    <!-- Sunlight Shaft Through Center Sheer Opening -->
+    <polygon points="720,80 1280,80 1520,1050 480,1050" fill="url(#sunbeam)"/>
+    
+    <!-- Sculptural Daybed (Left) -->
     <g filter="url(#gentleShadow)">
-      <rect x="180" y="740" width="160" height="180" rx="8" fill="#BDB3A1"/>
-      <ellipse cx="260" cy="740" rx="80" ry="18" fill="#D3C9B8"/>
-      <!-- Brass Reading Lamp -->
-      <line x1="260" y1="740" x2="260" y2="580" stroke="#C4A872" stroke-width="6"/>
-      <path d="M220 580 L300 580 L280 520 L240 520 Z" fill="#C4A872"/>
+      <rect x="90" y="680" width="440" height="140" rx="16" fill="#D3C9B8"/>
+      <rect x="110" y="660" width="400" height="120" rx="14" fill="#E5DFD2"/>
+      <rect x="120" y="820" width="20" height="50" rx="4" fill="#665440"/>
+      <rect x="490" y="820" width="20" height="50" rx="4" fill="#665440"/>
+    </g>
+
+    <!-- Floor Mirror / Travertine Pedestal (Right) -->
+    <g filter="url(#gentleShadow)">
+      <rect x="1360" y="830" width="120" height="170" rx="4" fill="#BDB09E"/>
+      <rect x="1365" y="834" width="110" height="162" rx="2" fill="#D3C7B6"/>
+      <ellipse cx="1420" cy="830" rx="40" ry="14" fill="#998A77"/>
     </g>
 
     <rect width="1600" height="1100" fill="url(#microGrain)"/>

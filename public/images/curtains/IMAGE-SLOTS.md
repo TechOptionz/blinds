@@ -10,6 +10,8 @@ For example:
 - `sheer-curtains-gallery-02.webp`: fabric close-up.
 - `sheer-curtains-gallery-03.webp`: finishing detail.
 
-Repeat for the other two prefixes. The main curtains page also uses `curtains-interior.webp` and `curtains-detail.webp`.
+Repeat for the other prefixes (`s-fold-curtains`, `pinch-pleat-curtains` too).
+
+Heading-style reference images (shared by the `/curtains` fold cards and every detail page): `heading-wave.webp`, `heading-pinch-pleat.webp`, `heading-eyelet.webp`. The main curtains page also uses `curtains-interior.webp` and `curtains-detail.webp`.
 
 Run `npm run images` after adding files, or restart development. Rebuild for production. See `/IMAGE_GUIDE.md` at the project root for the complete checklist.

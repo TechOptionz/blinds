@@ -56,105 +56,100 @@
       <circle cx="2" cy="2" r="0.8" fill="#1D211F" fill-opacity="0.03"/>
     </pattern>
     
-      <linearGradient id="sheerFlow" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stop-color="#FDFBF7" stop-opacity="0.75"/>
-        <stop offset="40%" stop-color="#F4EFE6" stop-opacity="0.6"/>
-        <stop offset="80%" stop-color="#EBE3D3" stop-opacity="0.8"/>
-        <stop offset="100%" stop-color="#DDD3C0" stop-opacity="0.7"/>
+      <linearGradient id="sheerDrape" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#DDD5C4" stop-opacity="0.85"/>
+        <stop offset="35%" stop-color="#F7F3EA" stop-opacity="0.95"/>
+        <stop offset="70%" stop-color="#EAE3D5" stop-opacity="0.88"/>
+        <stop offset="100%" stop-color="#C5BBA7" stop-opacity="0.85"/>
       </linearGradient>
     
   </defs>
+    <!-- High Ceiling Wall & Wood Floor -->
     <rect width="1600" height="1100" fill="url(#warmWall)"/>
     <path d="M0 800 L1600 800 L1600 1100 L0 1100 Z" fill="url(#woodFloor)"/>
+    <line x1="0" y1="800" x2="1600" y2="800" stroke="#7E6F5A" stroke-width="2"/>
+    <path d="M140 800 L0 1100 M450 800 L320 1100 M800 800 L760 1100 M1180 800 L1240 1100 M1450 800 L1580 1100" stroke="#8A7A64" stroke-width="1.2" stroke-opacity="0.35"/>
     
-    <!-- Floor-to-Ceiling Windows -->
-    <rect x="520" y="60" width="980" height="740" fill="url(#windowLight)"/>
-    <rect x="510" y="64" width="1000" height="16" fill="url(#steelMullion)" rx="2"/>
+    <!-- Floor-to-Ceiling Picture Window -->
+    <rect x="520" y="60" width="960" height="740" fill="#E2DACB" rx="2"/>
+    <rect x="540" y="80" width="920" height="710" fill="url(#windowLight)"/>
+    <g filter="url(#deepBlur)" opacity="0.45">
+      <ellipse cx="780" cy="500" rx="180" ry="240" fill="#6B785D"/>
+      <ellipse cx="1180" cy="460" rx="240" ry="280" fill="#7D8A6D"/>
+    </g>
+    <!-- Slimline Ceiling Recessed Track -->
+    <rect x="480" y="68" width="1040" height="12" fill="url(#steelMullion)" rx="2"/>
 
-    <!-- Inner Layer: Sheer Curtains -->
+    <!-- Left Curtain Stack -->
     
-      <path d="M620 74 Q648 62 676 74 L680 805 Q648 820 616 805 Z" fill="url(#sheerFlow)"/>
-      <path d="M648 68 L648 812" stroke="#FFFDF8" stroke-width="1.8" stroke-opacity="0.4" fill="none"/>
-    
-      <path d="M678 74 Q706 62 734 74 L738 805 Q706 820 674 805 Z" fill="url(#sheerFlow)"/>
-      <path d="M706 68 L706 812" stroke="#FFFDF8" stroke-width="1.8" stroke-opacity="0.4" fill="none"/>
-    
-      <path d="M736 74 Q764 62 792 74 L796 805 Q764 820 732 805 Z" fill="url(#sheerFlow)"/>
-      <path d="M764 68 L764 812" stroke="#FFFDF8" stroke-width="1.8" stroke-opacity="0.4" fill="none"/>
-    
-      <path d="M794 74 Q822 62 850 74 L854 805 Q822 820 790 805 Z" fill="url(#sheerFlow)"/>
-      <path d="M822 68 L822 812" stroke="#FFFDF8" stroke-width="1.8" stroke-opacity="0.4" fill="none"/>
-    
-      <path d="M852 74 Q880 62 908 74 L912 805 Q880 820 848 805 Z" fill="url(#sheerFlow)"/>
-      <path d="M880 68 L880 812" stroke="#FFFDF8" stroke-width="1.8" stroke-opacity="0.4" fill="none"/>
-    
-      <path d="M910 74 Q938 62 966 74 L970 805 Q938 820 906 805 Z" fill="url(#sheerFlow)"/>
-      <path d="M938 68 L938 812" stroke="#FFFDF8" stroke-width="1.8" stroke-opacity="0.4" fill="none"/>
-    
-      <path d="M968 74 Q996 62 1024 74 L1028 805 Q996 820 964 805 Z" fill="url(#sheerFlow)"/>
-      <path d="M996 68 L996 812" stroke="#FFFDF8" stroke-width="1.8" stroke-opacity="0.4" fill="none"/>
-    
-      <path d="M1026 74 Q1054 62 1082 74 L1086 805 Q1054 820 1022 805 Z" fill="url(#sheerFlow)"/>
-      <path d="M1054 68 L1054 812" stroke="#FFFDF8" stroke-width="1.8" stroke-opacity="0.4" fill="none"/>
-    
-      <path d="M1084 74 Q1112 62 1140 74 L1144 805 Q1112 820 1080 805 Z" fill="url(#sheerFlow)"/>
-      <path d="M1112 68 L1112 812" stroke="#FFFDF8" stroke-width="1.8" stroke-opacity="0.4" fill="none"/>
-    
-      <path d="M1142 74 Q1170 62 1198 74 L1202 805 Q1170 820 1138 805 Z" fill="url(#sheerFlow)"/>
-      <path d="M1170 68 L1170 812" stroke="#FFFDF8" stroke-width="1.8" stroke-opacity="0.4" fill="none"/>
-    
-      <path d="M1200 74 Q1228 62 1256 74 L1260 805 Q1228 820 1196 805 Z" fill="url(#sheerFlow)"/>
-      <path d="M1228 68 L1228 812" stroke="#FFFDF8" stroke-width="1.8" stroke-opacity="0.4" fill="none"/>
-    
-      <path d="M1258 74 Q1286 62 1314 74 L1318 805 Q1286 820 1254 805 Z" fill="url(#sheerFlow)"/>
-      <path d="M1286 68 L1286 812" stroke="#FFFDF8" stroke-width="1.8" stroke-opacity="0.4" fill="none"/>
-    
-
-    <!-- Outer Layer: Heavy Drapes Stacked to the Sides -->
-    
-        <polygon points="446,68 482,68 468,94 460,94" fill="#3D403D"/>
-        <path d="M460 94 L468 94 L500 805 Q464 820 432 805 Z" fill="url(#darkLinen)"/>
-        <path d="M464 94 L466 810" stroke="#2B2E2C" stroke-width="4" stroke-opacity="0.45" fill="none"/>
+        <path d="M480 80 Q500 70 520 80 L526 800 Q500 815 476 800 Z" fill="url(#sheerDrape)"/>
+        <path d="M500 75 L500 805" stroke="#FFFDF8" stroke-width="2" stroke-opacity="0.4" fill="none"/>
+        <path d="M480 80 L476 800" stroke="#8A7E6B" stroke-width="3" stroke-opacity="0.3" fill="none"/>
       
-        <polygon points="494,68 530,68 516,94 508,94" fill="#3D403D"/>
-        <path d="M508 94 L516 94 L548 805 Q512 820 480 805 Z" fill="url(#darkLinen)"/>
-        <path d="M512 94 L514 810" stroke="#2B2E2C" stroke-width="4" stroke-opacity="0.45" fill="none"/>
+        <path d="M520 80 Q540 70 560 80 L566 800 Q540 815 516 800 Z" fill="url(#sheerDrape)"/>
+        <path d="M540 75 L540 805" stroke="#FFFDF8" stroke-width="2" stroke-opacity="0.4" fill="none"/>
+        <path d="M520 80 L516 800" stroke="#8A7E6B" stroke-width="3" stroke-opacity="0.3" fill="none"/>
       
-        <polygon points="542,68 578,68 564,94 556,94" fill="#3D403D"/>
-        <path d="M556 94 L564 94 L596 805 Q560 820 528 805 Z" fill="url(#darkLinen)"/>
-        <path d="M560 94 L562 810" stroke="#2B2E2C" stroke-width="4" stroke-opacity="0.45" fill="none"/>
+        <path d="M560 80 Q580 70 600 80 L606 800 Q580 815 556 800 Z" fill="url(#sheerDrape)"/>
+        <path d="M580 75 L580 805" stroke="#FFFDF8" stroke-width="2" stroke-opacity="0.4" fill="none"/>
+        <path d="M560 80 L556 800" stroke="#8A7E6B" stroke-width="3" stroke-opacity="0.3" fill="none"/>
       
-        <polygon points="590,68 626,68 612,94 604,94" fill="#3D403D"/>
-        <path d="M604 94 L612 94 L644 805 Q608 820 576 805 Z" fill="url(#darkLinen)"/>
-        <path d="M608 94 L610 810" stroke="#2B2E2C" stroke-width="4" stroke-opacity="0.45" fill="none"/>
+        <path d="M600 80 Q620 70 640 80 L646 800 Q620 815 596 800 Z" fill="url(#sheerDrape)"/>
+        <path d="M620 75 L620 805" stroke="#FFFDF8" stroke-width="2" stroke-opacity="0.4" fill="none"/>
+        <path d="M600 80 L596 800" stroke="#8A7E6B" stroke-width="3" stroke-opacity="0.3" fill="none"/>
       
-        <polygon points="638,68 674,68 660,94 652,94" fill="#3D403D"/>
-        <path d="M652 94 L660 94 L692 805 Q656 820 624 805 Z" fill="url(#darkLinen)"/>
-        <path d="M656 94 L658 810" stroke="#2B2E2C" stroke-width="4" stroke-opacity="0.45" fill="none"/>
+        <path d="M640 80 Q660 70 680 80 L686 800 Q660 815 636 800 Z" fill="url(#sheerDrape)"/>
+        <path d="M660 75 L660 805" stroke="#FFFDF8" stroke-width="2" stroke-opacity="0.4" fill="none"/>
+        <path d="M640 80 L636 800" stroke="#8A7E6B" stroke-width="3" stroke-opacity="0.3" fill="none"/>
       
+        <path d="M680 80 Q700 70 720 80 L726 800 Q700 815 676 800 Z" fill="url(#sheerDrape)"/>
+        <path d="M700 75 L700 805" stroke="#FFFDF8" stroke-width="2" stroke-opacity="0.4" fill="none"/>
+        <path d="M680 80 L676 800" stroke="#8A7E6B" stroke-width="3" stroke-opacity="0.3" fill="none"/>
+      
+    <!-- Right Curtain Stack -->
     
-        <polygon points="1326,68 1362,68 1348,94 1340,94" fill="#3D403D"/>
-        <path d="M1340 94 L1348 94 L1380 805 Q1344 820 1312 805 Z" fill="url(#darkLinen)"/>
-        <path d="M1344 94 L1346 810" stroke="#2B2E2C" stroke-width="4" stroke-opacity="0.45" fill="none"/>
+        <path d="M1280 80 Q1300 70 1320 80 L1326 800 Q1300 815 1276 800 Z" fill="url(#sheerDrape)"/>
+        <path d="M1300 75 L1300 805" stroke="#FFFDF8" stroke-width="2" stroke-opacity="0.4" fill="none"/>
+        <path d="M1280 80 L1276 800" stroke="#8A7E6B" stroke-width="3" stroke-opacity="0.3" fill="none"/>
       
-        <polygon points="1374,68 1410,68 1396,94 1388,94" fill="#3D403D"/>
-        <path d="M1388 94 L1396 94 L1428 805 Q1392 820 1360 805 Z" fill="url(#darkLinen)"/>
-        <path d="M1392 94 L1394 810" stroke="#2B2E2C" stroke-width="4" stroke-opacity="0.45" fill="none"/>
+        <path d="M1320 80 Q1340 70 1360 80 L1366 800 Q1340 815 1316 800 Z" fill="url(#sheerDrape)"/>
+        <path d="M1340 75 L1340 805" stroke="#FFFDF8" stroke-width="2" stroke-opacity="0.4" fill="none"/>
+        <path d="M1320 80 L1316 800" stroke="#8A7E6B" stroke-width="3" stroke-opacity="0.3" fill="none"/>
       
-        <polygon points="1422,68 1458,68 1444,94 1436,94" fill="#3D403D"/>
-        <path d="M1436 94 L1444 94 L1476 805 Q1440 820 1408 805 Z" fill="url(#darkLinen)"/>
-        <path d="M1440 94 L1442 810" stroke="#2B2E2C" stroke-width="4" stroke-opacity="0.45" fill="none"/>
+        <path d="M1360 80 Q1380 70 1400 80 L1406 800 Q1380 815 1356 800 Z" fill="url(#sheerDrape)"/>
+        <path d="M1380 75 L1380 805" stroke="#FFFDF8" stroke-width="2" stroke-opacity="0.4" fill="none"/>
+        <path d="M1360 80 L1356 800" stroke="#8A7E6B" stroke-width="3" stroke-opacity="0.3" fill="none"/>
       
-        <polygon points="1470,68 1506,68 1492,94 1484,94" fill="#3D403D"/>
-        <path d="M1484 94 L1492 94 L1524 805 Q1488 820 1456 805 Z" fill="url(#darkLinen)"/>
-        <path d="M1488 94 L1490 810" stroke="#2B2E2C" stroke-width="4" stroke-opacity="0.45" fill="none"/>
+        <path d="M1400 80 Q1420 70 1440 80 L1446 800 Q1420 815 1396 800 Z" fill="url(#sheerDrape)"/>
+        <path d="M1420 75 L1420 805" stroke="#FFFDF8" stroke-width="2" stroke-opacity="0.4" fill="none"/>
+        <path d="M1400 80 L1396 800" stroke="#8A7E6B" stroke-width="3" stroke-opacity="0.3" fill="none"/>
       
-        <polygon points="1518,68 1554,68 1540,94 1532,94" fill="#3D403D"/>
-        <path d="M1532 94 L1540 94 L1572 805 Q1536 820 1504 805 Z" fill="url(#darkLinen)"/>
-        <path d="M1536 94 L1538 810" stroke="#2B2E2C" stroke-width="4" stroke-opacity="0.45" fill="none"/>
+        <path d="M1440 80 Q1460 70 1480 80 L1486 800 Q1460 815 1436 800 Z" fill="url(#sheerDrape)"/>
+        <path d="M1460 75 L1460 805" stroke="#FFFDF8" stroke-width="2" stroke-opacity="0.4" fill="none"/>
+        <path d="M1440 80 L1436 800" stroke="#8A7E6B" stroke-width="3" stroke-opacity="0.3" fill="none"/>
+      
+        <path d="M1480 80 Q1500 70 1520 80 L1526 800 Q1500 815 1476 800 Z" fill="url(#sheerDrape)"/>
+        <path d="M1500 75 L1500 805" stroke="#FFFDF8" stroke-width="2" stroke-opacity="0.4" fill="none"/>
+        <path d="M1480 80 L1476 800" stroke="#8A7E6B" stroke-width="3" stroke-opacity="0.3" fill="none"/>
       
 
-    <!-- Sunlight Shaft -->
-    <polygon points="680,80 1320,80 1480,1080 480,1080" fill="url(#sunbeam)"/>
+    <!-- Sunlight Shaft Through Center Sheer Opening -->
+    <polygon points="720,80 1280,80 1520,1050 480,1050" fill="url(#sunbeam)"/>
+    
+    <!-- Sculptural Daybed (Left) -->
+    <g filter="url(#gentleShadow)">
+      <rect x="90" y="680" width="440" height="140" rx="16" fill="#D3C9B8"/>
+      <rect x="110" y="660" width="400" height="120" rx="14" fill="#E5DFD2"/>
+      <rect x="120" y="820" width="20" height="50" rx="4" fill="#665440"/>
+      <rect x="490" y="820" width="20" height="50" rx="4" fill="#665440"/>
+    </g>
+
+    <!-- Floor Mirror / Travertine Pedestal (Right) -->
+    <g filter="url(#gentleShadow)">
+      <rect x="1360" y="830" width="120" height="170" rx="4" fill="#BDB09E"/>
+      <rect x="1365" y="834" width="110" height="162" rx="2" fill="#D3C7B6"/>
+      <ellipse cx="1420" cy="830" rx="40" ry="14" fill="#998A77"/>
+    </g>
+
     <rect width="1600" height="1100" fill="url(#microGrain)"/>
   </svg>

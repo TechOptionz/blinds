@@ -1,46 +1,158 @@
-/* Supporting copy should be comfortable to read, including during reveals. */
+/* ===== Readability: one type scale for the whole site =====
+   Loaded after globals.css, so these rules settle every text size.
+   Scale (desktop / mobile):
+     label   12.5px / 12px    uppercase eyebrows, breadcrumbs, dt labels
+     caption 14.5px / 14px    captions, helper text, legal lines
+     ui      15.5px / 15px    nav, buttons, links, form labels
+     card    16.5px / 16px    copy inside cards and compact panels
+     body    17.5px / 16.5px  running paragraphs, lists, definitions
+     lead    19.5px / 17.5px  hero and section intros */
+:root {
+  --text-label:12.5px; --text-caption:14.5px; --text-ui:15.5px; --text-card:16.5px; --text-body:17.5px; --text-lead:19.5px;
+  --leading-tight:1.45; --leading-body:1.75; --leading-lead:1.7;
+}
+@media (max-width:767px) {
+  :root { --text-label:12px; --text-caption:14px; --text-ui:15px; --text-card:16px; --text-body:16.5px; --text-lead:17.5px; }
+}
+body { font-size:var(--text-body); line-height:var(--leading-body); }
+main p, main dd, main li { font-weight:400; }
+p { max-width:62ch; }
+
+/* Lead copy: the paragraph directly under a page or section title */
+.lead,.hero p,.page-heading p,.collection-intro-heading p,.circle-hero-card p,.intro-split .lead,.split-copy .lead,
+.promo-inner .lead,.section-intro .lead,.cta-inner p,.image-band p,.curtain-detail-intro p,.curtains-hero-copy>p,
+.not-found p,.curtains-section-heading>p,.category-images-heading p,.product-details>div:first-child>p,
+.blind-planning-inner>div>p,.blind-layering p,.curtains-pairing p,.about-intro p,.about-philosophy p,.circle-copy p,
+.intro-body p,.product-copy>p:not(.product-teaser) {
+  font-size:var(--text-lead); line-height:var(--leading-lead); color:var(--muted);
+}
+.hero p { color:rgba(255,255,255,.94); max-width:640px; }
+.image-band p { color:rgba(255,255,255,.9); }
+.lightbox p { color:#fff; }
+.page-heading p,.collection-intro-heading p { max-width:660px; }
+.circle-hero-card p { max-width:48ch; }
+
+/* Body copy: running text, feature lists, definitions, FAQ answers */
+.split-copy h3+p,.check-list li,.feature-list article p,.blind-range-copy>p,.blind-range-copy dd,.blind-comparison dd,
+.curtain-category-copy>p,.curtain-category-copy dd,.curtains-directions p,.curtains-detail-copy article p,
+.curtain-faq details p,.curtain-detail-notes p,.blind-planning li p,.values p,.form-success p,.contact-layout aside p,
+.direct-contact p,.menu-dialog>p,.split-copy p:not(.lead):not(.image-note) {
+  font-size:var(--text-body); line-height:var(--leading-body);
+}
+.check-list { gap:18px; }
+.check-list li svg { margin-top:3px; }
+
+/* Card copy: compact panels where full body size would crowd the layout */
+.value-card p,.step-card p,.range-body>p,.mega-feature p,.footer-brand p,.related-card p { font-size:var(--text-card); line-height:1.7; }
+.step-card p { max-width:36ch; }
+
+/* Interface text: navigation, buttons, links, form controls */
+.header-nav { font-size:var(--text-ui); }
+.link-button,.text-link,.header-quote,.header-quote span,.menu-trigger,.collection-index a,.footer-col a,.footer-col span,
+.footer-usp-item,.mega-col a:not(.mega-thumb),.menu-sub a,.gallery-caption,.gallery-filter button,.lightbox-bottom p,
+.direct-contact a,.blind-enquire,.blind-comparison .link-button,.mega-feature .link-button,.related-card .text-link,
+.menu-top button,.lightbox-top button,.form-grid label,.form-notice,.form-status,.consent,.topbar { font-size:var(--text-ui); }
+.link-button { min-height:52px; padding:13px 30px; }
+.link-button.text,.text-link { min-height:42px; }
+.header-quote { padding:11px 22px; }
+.footer-usp-item strong { font-size:var(--text-card); }
+.mega-col h4 { font-size:var(--text-card); }
+.collection-index a>span:last-child { font-size:17px; }
+.curtain-faq summary { font-size:var(--text-card); line-height:1.5; }
+.form-grid input,.form-grid select,.form-grid textarea { font-size:var(--text-card); }
+.form-grid textarea::placeholder { font-size:var(--text-ui); }
+.form-grid label { line-height:1.5; }
+.form-notice,.form-status { line-height:1.6; }
+.consent { line-height:1.5; }
+
+/* Header at narrower desktop widths: keep both nav groups clear of the logo */
+@media (max-width:1280px) { .header-nav { font-size:14.5px; } .header-quote { font-size:14px; padding:9px 16px; } }
+
+/* Captions, helper text and legal lines */
+.image-note,.form-grid label>small,.field-error,.privacy-note,.footer-bottom,.blind-image-caption,.curtain-study-label,
+.curtains-image-caption,.spaces-row small,.feature-list article>span,.related>a>span:first-child,.curtains-number,
+.lightbox-bottom div>span,.curtain-detail-availability,.footer-usp-contact small,.product-title p,
+.style-card .style-card-tag,.range-links a,.related-card small { font-size:var(--text-caption); line-height:1.6; }
+.image-note { margin-top:16px; }
+.field-error { margin-top:8px; }
+.privacy-note { margin:10px 0 26px; }
+.blind-image-caption>span { font-size:22px; }
+
+/* Uppercase labels keep their tracking but gain a little size */
+.eyebrow,.breadcrumbs,.step-card .step-number,.menu-index,.menu-sub h4,.footer-col h4,.gallery-category,
+.blind-range-copy dt,.blind-comparison dt,.curtain-category-copy dt,.blind-comparison-grid .eyebrow,
+.curtains-directions .eyebrow,.curtain-category-copy .eyebrow,.collection-index a>span:first-child,
+.category-image-grid figcaption { font-size:var(--text-label); line-height:1.5; }
+.eyebrow { margin-bottom:18px; }
+.breadcrumbs { margin-bottom:28px; }
+.blind-range-copy dt,.blind-comparison dt,.curtain-category-copy dt { font-weight:700; color:var(--primary); margin-bottom:6px; }
+.footer-col h4 { margin-bottom:14px; }
+
+/* Headings: steady rhythm against the larger copy */
+h3 { line-height:1.3; }
+.split-copy h3 { margin-top:34px; }
+.split-copy h3+p { margin-top:12px; }
+.blind-range-copy h3,.curtain-category-copy h3 { margin-top:22px; margin-bottom:12px; }
+.feature-list article h3 { margin-bottom:12px; }
+.blind-planning li h3 { margin-bottom:10px; }
+.curtains-directions h3 { margin-bottom:14px; }
+.curtain-detail-notes h3 { font-size:1.35rem; }
+.value-card h3,.step-card h3 { margin-bottom:10px; }
+.range-body h3 { line-height:1.25; }
+
+/* Paragraph spacing */
+.intro-split .lead { margin-top:18px; }
+.split-copy .lead { margin-top:22px; }
+.circle-copy p { margin:18px 0 20px; }
+.value-card p,.step-card p { margin-top:4px; }
+.curtain-faq details p { padding-bottom:22px; }
+.feature-list article { gap:28px; padding:28px 0; }
+.blind-planning li p,.curtains-detail-copy article p { margin-top:4px; }
+.blind-range-copy dl>div,.curtain-category-copy dl>div { padding-block:16px; }
+.about-intro p { margin-top:32px; }
+.about-philosophy p { margin-top:28px; }
+
+/* Category image studies */
 .curtain-gallery-section { padding-top:75px; }
 .category-images-heading { display:grid; grid-template-columns:1.3fr 1fr; column-gap:45px; align-items:end; margin-bottom:35px; }
 .category-images-heading>.eyebrow { grid-column:1/-1; margin-bottom:20px; }
-.category-images-heading h2 { font-size:clamp(34px,3.7vw,58px); }
-.category-images-heading p { font-size:16px; color:var(--muted); max-width:360px; justify-self:end; }
+.category-images-heading h2 { font-size:clamp(1.9rem,3vw,2.6rem); }
+.category-images-heading p { max-width:380px; justify-self:end; }
 .category-image-grid { display:grid; grid-template-columns:1.2fr .9fr .9fr; gap:25px; align-items:start; }
 .category-image-grid figure { margin:0; min-width:0; }
-.category-image { height:350px; }
-.category-image-1 { height:440px; }
-.category-image-grid figcaption { margin-top:14px; font-size:13px; color:var(--muted); }
-.category-image-grid code { display:block; overflow-wrap:anywhere; font-size:11px; margin-top:8px; }
+.category-image { height:380px; }
+.category-image-1 { height:380px; }
+.category-image-grid figcaption { margin-top:14px; }
+.category-image-grid code { display:block; overflow-wrap:anywhere; font-size:12px; margin-top:8px; }
 .category-image .asset-label { top:12px; bottom:auto; max-width:calc(100% - 24px); overflow-wrap:anywhere; }
-@media(max-width:767px) {
-  .curtain-gallery-section { padding-top:50px; }
-  .category-images-heading { display:block; }
-  .category-images-heading p { margin-top:20px; }
-  .category-image-grid { grid-template-columns:1fr; gap:28px; }
-  .category-image,.category-image-1 { height:340px; }
-}
-main p, main dd { font-weight:400; }
-.curtain-category-copy>p,.curtains-hero-copy>p,.curtains-section-heading>p,
-.curtains-directions p,.curtains-pairing p,.curtain-faq details p,
-.blind-range-copy>p,.blind-range-copy dd,.blind-comparison dd,
-.collection-intro-heading p,.product-copy>p:not(.product-teaser),
-.product-details>div:first-child>p,.feature-list article p,.intro-body p {
-  font-size:16px; line-height:1.8;
-}
-.curtains-detail-copy article p,.blind-planning li p { font-size:16px; color:#e0e3da; line-height:1.75; }
+
+/* Curtain category and detail layouts */
 .curtain-category-image { display:block; height:480px; }
 .curtain-category-copy>.link-button { margin-top:22px; }
 .curtain-detail-intro { display:grid; grid-template-columns:1.1fr .9fr; gap:clamp(35px,7vw,100px); padding-block:70px; align-items:start; }
 .curtain-detail-intro h2 { font-size:clamp(38px,4.2vw,64px); }
-.curtain-detail-intro p { font-size:17px; line-height:1.8; color:var(--muted); margin-block:24px; }
-.curtain-detail-notes article { border-top:1px solid #c9cbc2; padding-block:22px; }
-.curtain-detail-notes h3 { font-size:22px; }
-.curtain-detail-notes p { margin-block:13px 0; }
+.curtain-detail-intro p { margin-block:24px; }
+.curtain-detail-notes article { border-top:1px solid var(--line); padding-block:22px; }
+.curtain-detail-notes p { margin-block:13px 0; color:var(--muted); }
 .curtain-detail-guide { padding-bottom:70px; }
 .curtain-detail-guide .curtains-directions { margin-top:0; }
-.curtain-detail-availability { margin-top:20px; font-size:15px; color:#e0e3da; }
-@media(max-width:767px) {
+.curtain-detail-availability { margin-top:20px; color:var(--muted); }
+
+/* Mobile adjustments */
+@media (max-width:767px) {
+  .curtain-gallery-section { padding-top:50px; }
+  .category-images-heading { display:block; }
+  .category-images-heading p { margin-top:20px; max-width:none; }
+  .category-image-grid { grid-template-columns:1fr; gap:28px; }
+  .category-image,.category-image-1 { height:340px; }
   .curtain-category-image { height:330px; }
   .curtain-detail-intro { grid-template-columns:1fr; gap:32px; padding-block:45px; }
-  .curtain-detail-intro p { font-size:16px; }
   .curtain-detail-guide { padding-bottom:45px; }
+  .hero p { margin:20px auto 26px; }
+  .breadcrumbs { margin-bottom:22px; }
+  .gallery-caption { font-size:var(--text-ui); }
+  .gallery-category { font-size:var(--text-label); }
+  .link-button { min-height:50px; }
 }
+@media (max-width:430px) { .gallery-caption { font-size:var(--text-ui); } .gallery-category { font-size:var(--text-label); } }
+@media (max-height:600px) and (orientation:landscape) { .menu-dialog nav a { font-size:28px; } }

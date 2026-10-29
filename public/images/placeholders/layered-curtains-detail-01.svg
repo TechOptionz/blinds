@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1100" viewBox="0 0 1600 1100">
     <defs>
     <linearGradient id="warmWall" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#EFECE6"/>
@@ -56,28 +56,100 @@
       <circle cx="2" cy="2" r="0.8" fill="#1D211F" fill-opacity="0.03"/>
     </pattern>
     
+      <linearGradient id="sheerDrape" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#DDD5C4" stop-opacity="0.85"/>
+        <stop offset="35%" stop-color="#F7F3EA" stop-opacity="0.95"/>
+        <stop offset="70%" stop-color="#EAE3D5" stop-opacity="0.88"/>
+        <stop offset="100%" stop-color="#C5BBA7" stop-opacity="0.85"/>
+      </linearGradient>
+    
   </defs>
-    <!-- Room vignette -->
-    <rect width="1200" height="900" fill="url(#warmWall)"/>
-    <path d="M0 640 L1200 640 L1200 900 L0 900 Z" fill="url(#woodFloor)"/>
+    <!-- High Ceiling Wall & Wood Floor -->
+    <rect width="1600" height="1100" fill="url(#warmWall)"/>
+    <path d="M0 800 L1600 800 L1600 1100 L0 1100 Z" fill="url(#woodFloor)"/>
+    <line x1="0" y1="800" x2="1600" y2="800" stroke="#7E6F5A" stroke-width="2"/>
+    <path d="M140 800 L0 1100 M450 800 L320 1100 M800 800 L760 1100 M1180 800 L1240 1100 M1450 800 L1580 1100" stroke="#8A7A64" stroke-width="1.2" stroke-opacity="0.35"/>
     
-    <!-- Window with layered-curtains styling -->
-    <rect x="350" y="60" width="750" height="580" fill="url(#windowLight)"/>
-    <rect x="350" y="60" width="750" height="580" fill="none" stroke="url(#steelMullion)" stroke-width="12"/>
-    <line x1="725" y1="60" x2="725" y2="640" stroke="url(#steelMullion)" stroke-width="8"/>
-    
-    <!-- Interior treatment based on category -->
-    
-      <!-- Curtains Room Setting -->
-      <path d="M350 60 Q380 50 412 60 L416 640 Q380 650 346 640 Z" fill="url(#sheerFabric)"/><path d="M412 60 Q442 50 474 60 L478 640 Q442 650 408 640 Z" fill="url(#sheerFabric)"/><path d="M474 60 Q504 50 536 60 L540 640 Q504 650 470 640 Z" fill="url(#sheerFabric)"/><path d="M536 60 Q566 50 598 60 L602 640 Q566 650 532 640 Z" fill="url(#sheerFabric)"/><path d="M598 60 Q628 50 660 60 L664 640 Q628 650 594 640 Z" fill="url(#sheerFabric)"/><path d="M660 60 Q690 50 722 60 L726 640 Q690 650 656 640 Z" fill="url(#sheerFabric)"/><path d="M722 60 Q752 50 784 60 L788 640 Q752 650 718 640 Z" fill="url(#sheerFabric)"/><path d="M784 60 Q814 50 846 60 L850 640 Q814 650 780 640 Z" fill="url(#sheerFabric)"/><path d="M846 60 Q876 50 908 60 L912 640 Q876 650 842 640 Z" fill="url(#sheerFabric)"/><path d="M908 60 Q938 50 970 60 L974 640 Q938 650 904 640 Z" fill="url(#sheerFabric)"/><path d="M970 60 Q1000 50 1032 60 L1036 640 Q1000 650 966 640 Z" fill="url(#sheerFabric)"/><path d="M1032 60 Q1062 50 1094 60 L1098 640 Q1062 650 1028 640 Z" fill="url(#sheerFabric)"/>
-    
-
-    <!-- Lounge Vignette -->
-    <g filter="url(#gentleShadow)">
-      <rect x="80" y="520" width="320" height="220" rx="16" fill="#DDD6C7"/>
-      <rect x="100" y="500" width="280" height="140" rx="12" fill="#EAE4D7"/>
-      <rect x="120" y="740" width="16" height="50" rx="3" fill="#665440"/>
-      <rect x="360" y="740" width="16" height="50" rx="3" fill="#665440"/>
+    <!-- Floor-to-Ceiling Picture Window -->
+    <rect x="520" y="60" width="960" height="740" fill="#E2DACB" rx="2"/>
+    <rect x="540" y="80" width="920" height="710" fill="url(#windowLight)"/>
+    <g filter="url(#deepBlur)" opacity="0.45">
+      <ellipse cx="780" cy="500" rx="180" ry="240" fill="#6B785D"/>
+      <ellipse cx="1180" cy="460" rx="240" ry="280" fill="#7D8A6D"/>
     </g>
-    <rect width="1200" height="900" fill="url(#microGrain)"/>
+    <!-- Slimline Ceiling Recessed Track -->
+    <rect x="480" y="68" width="1040" height="12" fill="url(#steelMullion)" rx="2"/>
+
+    <!-- Left Curtain Stack -->
+    
+        <path d="M480 80 Q500 70 520 80 L526 800 Q500 815 476 800 Z" fill="url(#sheerDrape)"/>
+        <path d="M500 75 L500 805" stroke="#FFFDF8" stroke-width="2" stroke-opacity="0.4" fill="none"/>
+        <path d="M480 80 L476 800" stroke="#8A7E6B" stroke-width="3" stroke-opacity="0.3" fill="none"/>
+      
+        <path d="M520 80 Q540 70 560 80 L566 800 Q540 815 516 800 Z" fill="url(#sheerDrape)"/>
+        <path d="M540 75 L540 805" stroke="#FFFDF8" stroke-width="2" stroke-opacity="0.4" fill="none"/>
+        <path d="M520 80 L516 800" stroke="#8A7E6B" stroke-width="3" stroke-opacity="0.3" fill="none"/>
+      
+        <path d="M560 80 Q580 70 600 80 L606 800 Q580 815 556 800 Z" fill="url(#sheerDrape)"/>
+        <path d="M580 75 L580 805" stroke="#FFFDF8" stroke-width="2" stroke-opacity="0.4" fill="none"/>
+        <path d="M560 80 L556 800" stroke="#8A7E6B" stroke-width="3" stroke-opacity="0.3" fill="none"/>
+      
+        <path d="M600 80 Q620 70 640 80 L646 800 Q620 815 596 800 Z" fill="url(#sheerDrape)"/>
+        <path d="M620 75 L620 805" stroke="#FFFDF8" stroke-width="2" stroke-opacity="0.4" fill="none"/>
+        <path d="M600 80 L596 800" stroke="#8A7E6B" stroke-width="3" stroke-opacity="0.3" fill="none"/>
+      
+        <path d="M640 80 Q660 70 680 80 L686 800 Q660 815 636 800 Z" fill="url(#sheerDrape)"/>
+        <path d="M660 75 L660 805" stroke="#FFFDF8" stroke-width="2" stroke-opacity="0.4" fill="none"/>
+        <path d="M640 80 L636 800" stroke="#8A7E6B" stroke-width="3" stroke-opacity="0.3" fill="none"/>
+      
+        <path d="M680 80 Q700 70 720 80 L726 800 Q700 815 676 800 Z" fill="url(#sheerDrape)"/>
+        <path d="M700 75 L700 805" stroke="#FFFDF8" stroke-width="2" stroke-opacity="0.4" fill="none"/>
+        <path d="M680 80 L676 800" stroke="#8A7E6B" stroke-width="3" stroke-opacity="0.3" fill="none"/>
+      
+    <!-- Right Curtain Stack -->
+    
+        <path d="M1280 80 Q1300 70 1320 80 L1326 800 Q1300 815 1276 800 Z" fill="url(#sheerDrape)"/>
+        <path d="M1300 75 L1300 805" stroke="#FFFDF8" stroke-width="2" stroke-opacity="0.4" fill="none"/>
+        <path d="M1280 80 L1276 800" stroke="#8A7E6B" stroke-width="3" stroke-opacity="0.3" fill="none"/>
+      
+        <path d="M1320 80 Q1340 70 1360 80 L1366 800 Q1340 815 1316 800 Z" fill="url(#sheerDrape)"/>
+        <path d="M1340 75 L1340 805" stroke="#FFFDF8" stroke-width="2" stroke-opacity="0.4" fill="none"/>
+        <path d="M1320 80 L1316 800" stroke="#8A7E6B" stroke-width="3" stroke-opacity="0.3" fill="none"/>
+      
+        <path d="M1360 80 Q1380 70 1400 80 L1406 800 Q1380 815 1356 800 Z" fill="url(#sheerDrape)"/>
+        <path d="M1380 75 L1380 805" stroke="#FFFDF8" stroke-width="2" stroke-opacity="0.4" fill="none"/>
+        <path d="M1360 80 L1356 800" stroke="#8A7E6B" stroke-width="3" stroke-opacity="0.3" fill="none"/>
+      
+        <path d="M1400 80 Q1420 70 1440 80 L1446 800 Q1420 815 1396 800 Z" fill="url(#sheerDrape)"/>
+        <path d="M1420 75 L1420 805" stroke="#FFFDF8" stroke-width="2" stroke-opacity="0.4" fill="none"/>
+        <path d="M1400 80 L1396 800" stroke="#8A7E6B" stroke-width="3" stroke-opacity="0.3" fill="none"/>
+      
+        <path d="M1440 80 Q1460 70 1480 80 L1486 800 Q1460 815 1436 800 Z" fill="url(#sheerDrape)"/>
+        <path d="M1460 75 L1460 805" stroke="#FFFDF8" stroke-width="2" stroke-opacity="0.4" fill="none"/>
+        <path d="M1440 80 L1436 800" stroke="#8A7E6B" stroke-width="3" stroke-opacity="0.3" fill="none"/>
+      
+        <path d="M1480 80 Q1500 70 1520 80 L1526 800 Q1500 815 1476 800 Z" fill="url(#sheerDrape)"/>
+        <path d="M1500 75 L1500 805" stroke="#FFFDF8" stroke-width="2" stroke-opacity="0.4" fill="none"/>
+        <path d="M1480 80 L1476 800" stroke="#8A7E6B" stroke-width="3" stroke-opacity="0.3" fill="none"/>
+      
+
+    <!-- Sunlight Shaft Through Center Sheer Opening -->
+    <polygon points="720,80 1280,80 1520,1050 480,1050" fill="url(#sunbeam)"/>
+    
+    <!-- Sculptural Daybed (Left) -->
+    <g filter="url(#gentleShadow)">
+      <rect x="90" y="680" width="440" height="140" rx="16" fill="#D3C9B8"/>
+      <rect x="110" y="660" width="400" height="120" rx="14" fill="#E5DFD2"/>
+      <rect x="120" y="820" width="20" height="50" rx="4" fill="#665440"/>
+      <rect x="490" y="820" width="20" height="50" rx="4" fill="#665440"/>
+    </g>
+
+    <!-- Floor Mirror / Travertine Pedestal (Right) -->
+    <g filter="url(#gentleShadow)">
+      <rect x="1360" y="830" width="120" height="170" rx="4" fill="#BDB09E"/>
+      <rect x="1365" y="834" width="110" height="162" rx="2" fill="#D3C7B6"/>
+      <ellipse cx="1420" cy="830" rx="40" ry="14" fill="#998A77"/>
+    </g>
+
+    <rect width="1600" height="1100" fill="url(#microGrain)"/>
   </svg>

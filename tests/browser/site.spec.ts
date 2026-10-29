@@ -1,5 +1,8 @@
 import { test, expect } from '@playwright/test';
-const routes = ['/curtains/sheer-curtains', '/curtains/blockout-curtains', '/curtains/layered-curtains', '/', '/curtains', '/blinds', '/blinds/roller-blinds', '/blinds/roman-blinds', '/blinds/venetian-blinds', '/gallery', '/about', '/contact'];
+import { products } from '../../content/products';
+import { curtainCategories } from '../../content/curtains';
+import { catalogueCategories } from '../../content/catalogue';
+const routes = ['/', '/blinds', '/curtains', '/screens', '/shutters', '/gallery', '/about', '/contact', ...products.map(p => `/blinds/${p.slug}`), ...curtainCategories.map(c => `/curtains/${c.slug}`), ...catalogueCategories.flatMap(category => category.items.map(item => `/${category.slug}/${item.slug}`))];
 test('all pages and image assets load, links are valid, no browser errors', async ({ page }) => {
   const errors: string[] = []; page.on('pageerror', error => errors.push(error.message));
   for (const route of routes) {
@@ -16,6 +19,7 @@ test('all pages and image assets load, links are valid, no browser errors', asyn
   expect((await page.goto('/blinds/not-a-product'))?.status()).toBe(404);
 });
 test('responsive layouts and screenshot review artifacts', async ({ page }) => {
+  test.slow();
   await page.emulateMedia({ reducedMotion: 'reduce' });
   for (const width of [360, 390, 430, 768, 1024, 1280, 1440, 1920]) {
     await page.setViewportSize({ width, height: 950 });
@@ -60,5 +64,5 @@ test('inner-page screenshots, text zoom and no-JavaScript content', async ({ pag
   await page.setViewportSize({ width: 390, height: 844 }); await page.screenshot({ path: 'test-results/hero-mobile.png' });
   await page.evaluate(() => { document.documentElement.style.fontSize = '200%'; });
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
-  const noJs = await browser.newContext({ javaScriptEnabled: false }); const staticPage = await noJs.newPage(); await staticPage.goto('/'); await expect(staticPage.locator('h1')).toBeVisible(); await expect(staticPage.getByRole('heading', { name: 'Light changes everything.' })).toBeVisible(); await noJs.close();
+  const noJs = await browser.newContext({ javaScriptEnabled: false }); const staticPage = await noJs.newPage(); await staticPage.goto('/'); await expect(staticPage.locator('h1')).toBeVisible(); await expect(staticPage.getByRole('heading', { name: 'Beautiful blinds for considered spaces.' })).toBeVisible(); await noJs.close();
 });

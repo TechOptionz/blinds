@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 test('curtain collection and detail pages connect correctly and fit all viewports', async ({ page }) => {
+  test.slow();
   await page.emulateMedia({ reducedMotion: 'reduce' });
   for (const width of [360, 390, 430, 768, 1024, 1440, 1920]) {
     await page.setViewportSize({ width, height: 950 });

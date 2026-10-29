@@ -1,7 +1,15 @@
 import { about } from '@/content/site';
 import { images } from '@/content/images';
-import { PageHeading, SectionCTA } from '@/components/sections/Shared';
-import { ImagePlaceholder } from '@/components/ui/ImagePlaceholder';
+import { SectionCTA } from '@/components/sections/Shared';
+import { CheckList, CircleHero, SplitFeature } from '@/components/sections/Feature';
+import { LinkButton } from '@/components/ui/LinkButton';
 import { pageMetadata } from '@/lib/metadata';
 export const metadata = pageMetadata('About Screens N Blinds | Thoughtful Window Coverings', 'Discover the design-led thinking behind Screens N Blinds and our approach to simple, considered interiors.', '/about');
-export default function About() { return <><PageHeading label="About Screens N Blinds" title="Simple choices. Beautiful spaces." description={about.lead} /><div className="about-banner" data-parallax><ImagePlaceholder asset={images.about} priority sizes="100vw" /></div><section className="about-intro wrap section-space"><span className="eyebrow" data-reveal>Our approach</span><div data-reveal><h2>A little detail<br />goes a long way.</h2><p>{about.detail}</p></div></section><section className="about-philosophy wrap"><div data-mask><ImagePlaceholder asset={images.intro} className="about-detail" /></div><div data-reveal><span className="eyebrow">A personal perspective</span><h2>Style that<br />feels like you.</h2><p>{about.style}</p></div></section><section className="values wrap section-space"><span className="eyebrow">What guides us</span>{about.values.map(([title, body], i) => <article key={title} data-reveal><span>0{i + 1}</span><h3>{title}</h3><p>{body}</p></article>)}</section><SectionCTA title="Let’s find your starting point." label="Contact Screens N Blinds" /></>; }
+export default function About() {
+  return <>
+    <CircleHero image={images.about} label="About Screens N Blinds" title={<>Simple choices. <span className="accent">Beautiful spaces.</span></>} copy={about.lead}><LinkButton href="/blinds">Explore Our Blinds</LinkButton></CircleHero>
+    <SplitFeature image={images.intro} label="Our story" title={<><span className="accent">We love</span> what we do.</>}><p className="lead">{about.detail}</p><h3>Our goal</h3><p>{about.goal}</p><h3>Our purpose</h3><p>{about.purpose}</p><LinkButton href="/blinds">See Our Blinds</LinkButton></SplitFeature>
+    <SplitFeature flip image={images.products.roman.main} label="A personal perspective" title={<>Style that <span className="accent">feels like you.</span></>}><p className="lead">{about.style}</p><CheckList items={about.values} /><LinkButton href="/contact" variant="outline">Tell Us About Your Space</LinkButton></SplitFeature>
+    <SectionCTA title="Let’s find your starting point." label="Contact Screens N Blinds" />
+  </>;
+}

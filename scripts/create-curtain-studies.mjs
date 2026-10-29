@@ -6,3 +6,14 @@ const darker = source.replaceAll('#a99b84', '#706254').replaceAll('#e9e0ce', '#b
 await writeFile('public/images/placeholders/sheer-curtains.svg', source.replace(marker, sheer + marker));
 await writeFile('public/images/placeholders/blockout-curtains.svg', darker);
 await writeFile('public/images/placeholders/layered-curtains.svg', darker.replace(marker, sheer + marker));
+const sfold = `<g>${Array.from({length:10}, (_, i) => `<path d="M${772+i*62} 58q31 40 62 0" fill="none" stroke="#9b8d78" stroke-width="7"/><path d="M${772+i*62} 60q-16 390 0 773q31 30 62 0q16-383 0-773" fill="#efe7d7" fill-opacity=".55" stroke="#c6bda7" stroke-width="3"/>`).join('')}</g>`;
+const pleat = `<g>${Array.from({length:10}, (_, i) => `<path d="M${776+i*62} 58l10 74h-20z M${786+i*62} 58l10 74h-20z M${796+i*62} 58l10 74h-20z" fill="#a8977f"/><path d="M${772+i*62} 132q31 -12 62 0v701q-31 10-62 0z" fill="#e4dac8" fill-opacity=".7" stroke="#b7a78f" stroke-width="3"/>`).join('')}</g>`;
+await writeFile('public/images/placeholders/s-fold-curtains.svg', source.replace(marker, sfold + marker));
+await writeFile('public/images/placeholders/pinch-pleat-curtains.svg', darker.replace(marker, pleat + marker));
+const linen = `<g>${Array.from({length:30}, (_, i) => `<path d="M770 ${70+i*26}h620" stroke="#d9d0bd" stroke-opacity=".5" stroke-width="2"/>`).join('')}</g>`;
+const rings = `<g><rect x="740" y="48" width="680" height="10" rx="5" fill="#6b5a48"/>${Array.from({length:11}, (_, i) => `<circle cx="${790+i*58}" cy="53" r="13" fill="none" stroke="#8a7458" stroke-width="6"/>`).join('')}</g>`;
+const lining = '<rect x="770" y="58" width="22" height="775" fill="#cfc4b0"/><rect x="1368" y="58" width="22" height="775" fill="#cfc4b0"/>';
+await writeFile('public/images/placeholders/linen-curtains.svg', source.replace(marker, linen + marker));
+await writeFile('public/images/placeholders/velvet-curtains.svg', darker.replaceAll('#706254', '#5a3a3d').replaceAll('#b5a48d', '#8d5a62').replaceAll('#8e7c65', '#6e4149').replaceAll('#645647', '#4a2d33'));
+await writeFile('public/images/placeholders/thermal-curtains.svg', darker.replace(marker, lining + marker));
+await writeFile('public/images/placeholders/eyelet-curtains.svg', source.replace(marker, rings + marker));

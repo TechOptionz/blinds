@@ -3,6 +3,14 @@ export const blindGuidance: Record<BlindStyle, { character: string; light: strin
   roller: { character: 'A smooth fabric panel and a minimal profile.', light: 'Fabric choice shapes how light passes through the blind.', discuss: 'Fabric opacity, colour, window proportions and how the blind will operate.' },
   roman: { character: 'Tailored fabric with soft, horizontal folds.', light: 'Fabric and lining choices influence the light and privacy.', discuss: 'Texture, lining, fold depth and the space needed above the window.' },
   venetian: { character: 'Crisp horizontal slats with an architectural rhythm.', light: 'Tilting the slats changes the direction of entering light.', discuss: 'Slat material, finish, cleaning needs and suitability for the room.' },
+  'double-roller': { character: 'Two fabric layers on one compact bracket.', light: 'A sheer layer filters daylight; a blockout layer closes the window down.', discuss: 'Fabric pairings, bracket depth and which layer sits at the front.' },
+  honeycomb: { character: 'Soft pleated cells with a uniform, cushioned look.', light: 'Cell fabric spreads light evenly, from filtered to blockout.', discuss: 'Cell size, fabric opacity and how the blind will be operated.' },
+  vertical: { character: 'Tall fabric vanes with a clean, linear rhythm.', light: 'Rotating the vanes angles the light across the room.', discuss: 'Vane width, fabric, stacking side and clearance for doors.' },
+  panel: { character: 'Wide, flat panels that glide across the opening.', light: 'Panel fabric sets the mood, from airy sheer to full blockout.', discuss: 'Track channels, panel count, stacking space and fabric weight.' },
+  sunscreen: { character: 'An open-weave fabric with a crisp, technical finish.', light: 'Filters glare and UV while keeping the daytime view.', discuss: 'Weave openness, colour and whether a blockout layer is needed at night.' },
+  vision: { character: 'Horizontal sheer and solid bands in a modern rhythm.', light: 'Align the bands to move from open to closed.', discuss: 'Band width, fabric colour and control type.' },
+  'timber-venetian': { character: 'Wide wooden slats with visible grain.', light: 'Tilting the slats steers sunlight and shade.', discuss: 'Slat width, stain or paint finish and room humidity.' },
+  motorised: { character: 'Any style, operated by motor instead of cords.', light: 'Open and close on a schedule or with a remote.', discuss: 'Power supply, control type and which styles to motorise.' },
 };
 export const blindPriorities = [
   ['Follow the light.', 'Notice when the room is brightest and how you use it throughout the day. Tell us whether you want a brighter backdrop or a more shaded space.'],

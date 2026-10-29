@@ -1,6 +1,6 @@
 # Screens N Blinds
 
-A complete Next.js App Router website built from `DESIGN_BLUEPRINT.md` and `WEBSITE_CONTENT.md`. Original charcoal-and-warm-white editorial design, Manrope / DM Sans typography, GSAP scroll reveals, architectural illustration placeholders, responsive navigation, product pages, inspiration gallery and a server-validated enquiry integration.
+A complete Next.js App Router website built from `DESIGN_BLUEPRINT.md` and `WEBSITE_CONTENT.md`. Bright, minimal commercial design (white and warm-grey surfaces, slate text and buttons, a single apricot accent) with Manrope / DM Sans typography: a USP top bar, sticky centred-logo header with hover mega-menus, full-bleed and circular heroes, arched-top category cards, edge-to-edge split features with tick-mark checklists, centred section introductions with italic accent words, GSAP scroll reveals, architectural illustration placeholders, responsive navigation, seven blind and five curtain detail pages, inspiration gallery, a USP footer and a server-validated enquiry integration.
 
 ## Run locally
 
@@ -39,6 +39,10 @@ The fonts use `next/font/google`: the build needs access to Google Fonts and pac
 - `content/`: centrally editable business, product, gallery, image and shared copy data.
 - `tests/`: validation/API tests and Playwright browser verification.
 
+## Logo
+
+The brand logo is `public/images/brand/screens-n-blinds-logo.png` (a cleaned transparent PNG, 1760×572). It is rendered by the `Wordmark` component in `components/layout/Header.tsx` for the header, mobile menu and footer; heights are set in `app/globals.css` under "Brand logo". If you replace the file, update `logoSize` in `content/site.ts` to the new pixel dimensions. The favicon in `app/icon.svg` is a vector mark derived from the logo's N and slats.
+
 ## Replace images
 
 See [IMAGE_GUIDE.md](./IMAGE_GUIDE.md) for the complete filename checklist across all six categories. Every detail page includes three individually replaceable gallery images. Run `npm run images` after dropping in photographs to refresh the asset manifest without restarting development.
@@ -76,7 +80,7 @@ The Blinds collection page includes expanded product presentations, a style comp
 
 Curtain categories, heading styles and FAQs live in `content/curtains.ts`. Sheer, blockout and layered curtains have individual enquiry selections. Replace `sheer-curtains.webp`, `blockout-curtains.webp` and `layered-curtains.webp` under `public/images/curtains/` to supply category photography. Original illustrative fallbacks can be regenerated with `node scripts/create-curtain-studies.mjs`. Category copy presents design options for discussion, not confirmed fabric availability or performance guarantees.
 
-Edit `content/site.ts` for business settings, shared copy, navigation and approach statements. Set verified `business.email` and `business.phone` to expose direct contact links. Absent channels remain hidden. Change products in `content/products.ts`; titles, related links, routes, form choices and validation derive from that list. Supporting page copy lives in the relevant server page. Colours and spacing are CSS variables at the beginning of `app/globals.css`.
+Edit `content/site.ts` for business settings, shared copy, navigation and approach statements. Set verified `business.email` and `business.phone` to expose direct contact links. Absent channels remain hidden. Change products in `content/products.ts` (eleven blind styles grouped as Roller, Fabric & folds, Slats & panels, and Motorised); titles, related links, routes, mega-menu columns, footer links, form choices and validation derive from that list. Curtain kinds (sheer, blockout, layered, S-fold, pinch pleat, linen, velvet, thermal, eyelet) live in `content/curtains.ts`; the screens and shutters ranges are data in `content/catalogue.ts` and render through the shared templates in `components/sections/Catalogue.tsx` via thin routes under `app/screens/` and `app/shutters/`; the header mega-menus are assembled in `content/menu.ts`. Reusable sections (`CircleHero`, `SplitFeature`, `CheckList`) are in `components/sections/Feature.tsx`. New blind styles need a matching illustration: add a drawing to `scripts/create-placeholders.mjs`, list the style in `scripts/create-detail-placeholders.mjs`, then run both scripts and `npm run images`. Supporting page copy lives in the relevant server page. Colours, radii and spacing are CSS variables at the beginning of `app/globals.css` (`--primary`, `--accent`, `--sand`, `--arch`). Homepage sections live in `app/page.tsx`; the top bar, header and footer are in `components/layout/`; line icons are in `components/ui/Icons.tsx`.
 
 The name and three categories remain provisional per the supplied brief. There are no invented service-area, installation, warranty, pricing, company-history or testimonial claims.
 
