@@ -1,0 +1,81 @@
+/* =====================================================================
+   Button system (loaded last)
+   One size, shape, colour and motion language for every call to action.
+     solid    brand orange, hover deepens to navy       → primary action
+     outline  navy hairline, hover fills navy           → secondary action
+     text     orange label + arrow, underline on hover  → tertiary / inline
+   Section-specific rules earlier in globals.css changed sizes and gaps one
+   section at a time; they are reset here so every button matches.
+   ===================================================================== */
+:root { --btn-h:52px; --btn-px:30px; --btn-gap:10px; --btn-fs:15px; --btn-solid:var(--accent-deep); --btn-solid-hover:var(--primary); }
+@media (max-width:767px) { :root { --btn-h:50px; --btn-px:24px; } }
+
+.link-button,
+.blind-comparison .link-button,.mega-feature .link-button,.blind-range-actions .link-button,
+.curtain-category-copy .link-button,.footer-usp-contact .link-button,.submit-button {
+  gap:var(--btn-gap); min-height:var(--btn-h); padding:0 var(--btn-px); font-size:var(--btn-fs); font-weight:700; line-height:1.25; letter-spacing:.005em;
+  border-radius:9999px; border:1.5px solid transparent;
+  transition:background-color .25s ease,color .25s ease,border-color .25s ease,box-shadow .3s var(--ease),transform .3s var(--ease),translate .2s ease-out,scale .15s ease;
+}
+.link-button:active,.header-quote:active { scale:.98; }
+
+/* Solid: one brand colour everywhere, including hero, CTA band, menu and footer. */
+.link-button.solid,.hero .link-button.solid,.cta-inner .link-button.solid,.section-cta .link-button.solid,
+.footer-usp-contact .link-button,.menu-dialog .link-button,.mega-feature .link-button.solid {
+  background:var(--btn-solid); border-color:var(--btn-solid); color:#fff; box-shadow:0 10px 22px -14px rgba(194,95,31,.75);
+}
+.link-button.solid:hover,.hero .link-button.solid:hover,.cta-inner .link-button.solid:hover,.section-cta .link-button.solid:hover,
+.footer-usp-contact .link-button:hover,.menu-dialog .link-button:hover,.mega-feature .link-button.solid:hover {
+  background:var(--btn-solid-hover); border-color:var(--btn-solid-hover); color:#fff; transform:translateY(-2px); box-shadow:0 14px 26px -14px rgba(31,41,51,.7);
+}
+
+/* Outline: navy hairline that fills on hover. */
+.link-button.outline { background:transparent; border-color:var(--primary); color:var(--primary); box-shadow:none; }
+.link-button.outline:hover { background:var(--primary); border-color:var(--primary); color:#fff; transform:translateY(-2px); box-shadow:0 14px 26px -14px rgba(31,41,51,.6); }
+.hero .link-button.outline { border-color:rgba(255,255,255,.75); color:#fff; background:rgba(255,255,255,.08); }
+.hero .link-button.outline:hover { background:#fff; border-color:#fff; color:var(--primary); }
+
+/* Text: no pill, no shadow; the label underlines and the arrow nudges. */
+.link-button.text,.text-link { min-height:44px; padding:0; gap:var(--btn-gap); border:0; border-radius:0; background:none; box-shadow:none; font-size:var(--btn-fs); font-weight:700; color:var(--accent-deep);
+  text-decoration:underline; text-decoration-color:transparent; text-decoration-thickness:1.5px; text-underline-offset:6px; transition:color .2s ease,text-decoration-color .2s ease; }
+.link-button.text:hover,.text-link:hover { color:var(--primary); text-decoration-color:currentColor; transform:none; box-shadow:none; }
+.link-button.text .arrow,.text-link .arrow { text-decoration:none; }
+
+/* Compact size: header and mega-menu. */
+.header-quote,.header-nav>a.header-quote { min-height:46px; padding:0 22px; gap:var(--btn-gap); font-size:15px; font-weight:700; border:1.5px solid var(--btn-solid); background:var(--btn-solid); color:#fff; box-shadow:0 10px 22px -14px rgba(194,95,31,.75); }
+.header-quote:hover,.header-nav>a.header-quote:hover { background:var(--btn-solid-hover); border-color:var(--btn-solid-hover); color:#fff; }
+.mega-feature .link-button { --btn-h:44px; --btn-px:22px; --btn-fs:14px; }
+@media (max-width:1280px) { .header-quote,.header-nav>a.header-quote { min-height:42px; padding:0 16px; font-size:14px; } }
+
+/* Arrow glyph: same weight and travel on every button. */
+.link-button .arrow,.text-link .arrow,.header-quote span,.link-button>span[aria-hidden] { display:inline-block; font-size:1.05em; line-height:1; transition:transform .3s var(--ease); }
+.link-button:hover .arrow,.text-link:hover .arrow,.header-quote:hover span,.link-button:hover>span[aria-hidden] { transform:translateX(4px); }
+
+.submit-button:disabled,.submit-button:disabled:hover { transform:none; box-shadow:none; background:var(--btn-solid); border-color:var(--btn-solid); }
+
+/* ---------------------------------------------------------------------
+   Style index ("01 Plantation Shutters ↓"): an even grid of tiles in
+   place of free-wrapping pills, so rows never break 5 + 1.
+   --------------------------------------------------------------------- */
+.collection-index { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; max-width:1080px; margin:34px auto 0; }
+.collection-index a {
+  display:flex; align-items:center; gap:16px; min-height:68px; padding:12px 14px 12px 20px;
+  background:#fff; border:1px solid var(--line); border-radius:16px; color:var(--ink);
+  font-size:var(--text-ui,15px); font-weight:600; line-height:1.3; text-align:left;
+  transition:border-color .25s ease,box-shadow .3s var(--ease),transform .3s var(--ease);
+}
+.collection-index a>span:first-child { flex:none; box-sizing:border-box; width:46px; padding-right:16px; border-right:1px solid var(--line); font-size:12px; font-weight:700; letter-spacing:.06em; font-variant-numeric:tabular-nums; color:var(--accent-deep); }
+.collection-index a>span:last-child { flex:none; margin-left:auto; display:grid; place-items:center; width:34px; height:34px; border-radius:50%; background:var(--sand); color:var(--accent-deep); font-size:15px; transition:background-color .25s ease,color .25s ease,transform .3s var(--ease); }
+.collection-index a:hover { background:#fff; color:var(--ink); border-color:var(--primary); transform:translateY(-2px); box-shadow:0 16px 30px -22px rgba(31,41,51,.55); }
+.collection-index a:hover>span:first-child { color:var(--accent-deep); }
+.collection-index a:hover>span:last-child { background:var(--accent-deep); color:#fff; transform:translateY(2px); }
+@media (max-width:950px) { .collection-index { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media (max-width:767px) {
+  .collection-index { grid-template-columns:1fr; gap:8px; margin-top:28px; }
+  .collection-index a,.collection-index a:last-child { min-height:58px; padding:8px 10px 8px 16px; border-bottom:1px solid var(--line); border-radius:14px; }
+  .collection-index a>span:last-child { width:32px; height:32px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .link-button,.header-quote,.collection-index a,.collection-index a>span,.arrow { transition:none; }
+  .link-button:hover,.collection-index a:hover,.collection-index a:hover>span:last-child { transform:none; }
+}

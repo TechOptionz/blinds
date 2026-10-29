@@ -5,6 +5,15 @@ export type ImageAsset = { path: string; alt: string; style: BlindStyle | 'curta
 const asset = (path: string, alt: string, style: BlindStyle = 'roller'): ImageAsset => withCredit({ path: `/images/${path}.webp`, alt, style, position: 'center', mobilePosition: '60% center', source: 'Original architectural placeholder illustration', licence: 'Created for this project; replace with approved imagery', actualProject: false });
 export const images = {
   hero: asset('hero/hero-living-room', 'Architectural study of a warm living space with roller blinds'),
+  /** Home hero slideshow, in display order. Chosen for range coverage and a calm centre so the headline stays readable. */
+  heroSlides: [
+    asset('shutters/plantation-shutters', 'Living room with white plantation shutters', 'roller'),
+    asset('products/timber-venetian-main', 'Living room with timber Venetian blinds', 'timber-venetian'),
+    asset('curtains/curtains-interior', 'Living room with sheer curtains and drapes', 'roller'),
+    asset('products/venetian-main', 'Bedroom with white Venetian blinds', 'venetian'),
+    asset('curtains/layered-curtains', 'Bedroom with layered sheers and drapes', 'roller'),
+    asset('products/vision-main', 'Living room with white vision blinds', 'vision'),
+  ],
   intro: asset('sections/intro-detail', 'A quiet window corner in warm neutral tones'),
   about: asset('about/about-interior', 'Illustrated interior with a tailored Roman blind', 'roman'),
   cta: asset('sections/cta-interior', 'Soft daylight through horizontal Venetian slats', 'venetian'),

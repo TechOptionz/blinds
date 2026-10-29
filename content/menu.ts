@@ -2,16 +2,17 @@ import { blindGroups, products } from './products';
 import { curtainCategories } from './curtains';
 import { catalogue, catalogueImage } from './catalogue';
 import { images, type ImageAsset } from './images';
-export type MenuColumn = { heading: string; image: ImageAsset; links: { label: string; href: string }[] };
+export type MenuLink = { label: string; href: string; image: ImageAsset };
+export type MenuColumn = { heading: string; links: MenuLink[] };
 export type MegaMenu = { columns: MenuColumn[]; feature: { eyebrow: string; title: string; copy: string; label: string; href: string } };
 const byGroup = (group: string) => products.filter(product => product.group === group);
 const curtain = (slug: string) => curtainCategories.find(category => category.slug === slug)!;
-const curtainColumn = (heading: string, slugs: string[]): MenuColumn => ({ heading, image: curtain(slugs[0]).image, links: slugs.map(slug => ({ label: curtain(slug).name, href: `/curtains/${slug}` })) });
-const catalogueColumns = (slug: 'screens' | 'shutters'): MenuColumn[] => catalogue[slug].groups.map(group => { const items = catalogue[slug].items.filter(item => item.group === group); return { heading: group, image: catalogueImage(slug, items[0]), links: items.map(item => ({ label: item.name, href: `/${slug}/${item.slug}` })) }; });
+const curtainColumn = (heading: string, slugs: string[]): MenuColumn => ({ heading, links: slugs.map(slug => ({ label: curtain(slug).name, href: `/curtains/${slug}`, image: curtain(slug).image })) });
+const catalogueColumns = (slug: 'screens' | 'shutters'): MenuColumn[] => catalogue[slug].groups.map(group => { const items = catalogue[slug].items.filter(item => item.group === group); return { heading: group, links: items.map(item => ({ label: item.name, href: `/${slug}/${item.slug}`, image: catalogueImage(slug, item) })) }; });
 /** Hover menus for the main navigation, keyed by the top-level route. */
 export const megaMenus: Record<string, MegaMenu> = {
   '/blinds': {
-    columns: blindGroups.map(group => ({ heading: group, image: images.products[byGroup(group)[0].style].main, links: byGroup(group).map(product => ({ label: product.name, href: `/blinds/${product.slug}` })) })),
+    columns: blindGroups.map(group => ({ heading: group, links: byGroup(group).map(product => ({ label: product.name, href: `/blinds/${product.slug}`, image: images.products[product.style].main })) })),
     feature: { eyebrow: 'Not sure where to start?', title: 'Tell us about your room.', copy: 'Share the window, the light and the look you have in mind and we will suggest styles worth considering.', label: 'Request a Quote', href: '/contact' },
   },
   '/curtains': {

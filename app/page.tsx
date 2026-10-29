@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { about, home } from '@/content/site';
 import { images } from '@/content/images';
+import { HeroSlideshow } from '@/components/sections/HeroSlideshow';
 import { gallery } from '@/content/gallery';
 import { products } from '@/content/products';
 import { ImagePlaceholder } from '@/components/ui/ImagePlaceholder';
@@ -14,7 +15,7 @@ const styleName = (style: string) => products.find(product => product.style === 
 const stepImages = [images.products.roller.details[0], images.products.roman.details[0], images.products.venetian.details[0]];
 export default function Home() {
   return <>
-    <section className="hero"><div className="hero-background" data-parallax><ImagePlaceholder asset={images.hero} priority sizes="100vw" /></div><div className="hero-scrim" /><div className="hero-content wrap"><span className="eyebrow" data-entrance>Windows, considered.</span><h1 data-entrance>Beautiful blinds. <span className="accent">Better living.</span></h1><p data-entrance>{home.hero}</p><div className="hero-actions" data-entrance><LinkButton href="/blinds">Explore Our Blinds</LinkButton><LinkButton href="/contact" variant="outline">Request a Quote</LinkButton></div></div><div className="hero-badge" aria-label="Free, no-obligation quote requests"><small>Start here</small><strong>Free</strong><span>quote request</span></div></section>
+    <section className="hero"><HeroSlideshow slides={images.heroSlides} /><div className="hero-scrim" /><div className="hero-content wrap"><span className="eyebrow" data-entrance>Windows, considered.</span><h1 data-entrance>Beautiful blinds. <span className="accent">Better living.</span></h1><p data-entrance>{home.hero}</p><div className="hero-actions" data-entrance><LinkButton href="/blinds">Explore Our Blinds</LinkButton><LinkButton href="/contact" variant="outline">Request a Quote</LinkButton></div></div><div className="hero-badge" aria-label="Free, no-obligation quote requests"><small>Start here</small><strong>Free</strong><span>quote request</span></div></section>
     <section className="intro-split wrap section-space" id="approach"><div data-reveal><span className="eyebrow">The Screens N Blinds approach</span><h2>Beautiful blinds for <span className="accent">considered</span> spaces.</h2></div><div data-reveal><p className="lead">{home.introduction}</p><Link href="/about" className="text-link">More About Us <span className="arrow" aria-hidden="true">→</span></Link></div></section>
     <section className="style-section wrap section-space"><SectionIntro label="Shop by range" title={<>Find your kind of <span className="accent">beautiful.</span></>} copy="Blinds, curtains, screens and shutters, each made to fit your windows and doors. Start with a range, then explore the styles inside it." /><ProductShowcase /></section>
     <section className="promo-block section-space"><div className="wrap promo-inner" data-reveal><span className="eyebrow">Designed around the way you live</span><h2>The right blinds do more than <span className="accent">cover a window.</span></h2><p className="lead">{home.manifesto}</p><LinkButton href="/blinds">Discover the Collection</LinkButton><LinkButton href="/contact" variant="outline">Request a Quote</LinkButton></div></section>

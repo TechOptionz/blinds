@@ -11,6 +11,7 @@ import { site } from '@/content/site';
 import './globals.css';
 import './readability.css';
 import './motion.css';
+import './buttons.css';
 const manrope = Manrope({ subsets: ['latin'], variable: '--font-heading', display: 'swap' });
 const dmSans = DM_Sans({ subsets: ['latin'], style: ['normal', 'italic'], variable: '--font-body', display: 'swap' });
 export const metadata: Metadata = { title: { default: 'Screens N Blinds | Beautiful Blinds for Considered Spaces', template: '%s | Screens N Blinds' }, description: 'Considered window coverings for beautiful spaces.', ...(site.domain ? { metadataBase: new URL(site.domain) } : {}), robots: site.domain ? { index: true, follow: true } : { index: false, follow: false } };

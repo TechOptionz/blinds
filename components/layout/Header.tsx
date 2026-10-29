@@ -5,11 +5,20 @@ import { logoSize } from '@/content/site';
 import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 import { navigation, site } from '@/content/site';
-import { megaMenus } from '@/content/menu';
+import { megaMenus, type MenuColumn } from '@/content/menu';
 import { ImagePlaceholder } from '@/components/ui/ImagePlaceholder';
 import { trapDialogFocus } from '@/lib/focus-trap';
 export function Wordmark({ onClick, priority = false }: { onClick?: () => void; priority?: boolean }) {
   return <Link href="/" onClick={onClick} className="wordmark" aria-label={`${site.name} home`}><Image src="/images/brand/screens-n-blinds-logo.png" alt={site.name} width={logoSize.width} height={logoSize.height} priority={priority} sizes="(max-width: 767px) 132px, 170px" /></Link>;
+}
+/** One mega-menu column: hovering or focusing a link swaps the preview image to that product. Only the text links navigate. */
+function MegaColumn({ column }: { column: MenuColumn }) {
+  const [active, setActive] = useState(0);
+  return <div className="mega-col" onMouseLeave={() => setActive(0)}>
+    <div className="mega-thumb" aria-hidden="true">{column.links.map((link, i) => <div key={link.href} className={`mega-thumb-layer${i === active ? ' active' : ''}`}><ImagePlaceholder asset={link.image} sizes="240px" /></div>)}</div>
+    <h4>{column.heading}</h4>
+    {column.links.map((link, i) => <Link key={link.href} href={link.href} className={i === active ? 'active' : undefined} onMouseEnter={() => setActive(i)} onFocus={() => setActive(i)}>{link.label}</Link>)}
+  </div>;
 }
 export function Header() {
   const pathname = usePathname();
@@ -47,7 +56,7 @@ export function Header() {
         return <div className={`nav-item${closedMenu === item.href ? ' closed' : ''}`} key={item.href} onKeyDown={blur} onClick={dismiss(item.href)} onMouseLeave={() => setClosedMenu(open => open === item.href ? null : open)}>
           <Link href={item.href} aria-current={current(item.href)} aria-haspopup="true">{item.label}<span className="caret" aria-hidden="true" /></Link>
           <div className="mega" style={{ '--cols': mega.columns.length } as React.CSSProperties}><div className="mega-inner">
-            {mega.columns.map(column => <div className="mega-col" key={column.heading}><Link href={column.links[0].href} className="mega-thumb" tabIndex={-1} aria-hidden="true"><ImagePlaceholder asset={column.image} sizes="240px" /></Link><h4>{column.heading}</h4>{column.links.map(link => <Link key={link.href} href={link.href}>{link.label}</Link>)}</div>)}
+            {mega.columns.map(column => <MegaColumn key={column.heading} column={column} />)}
             <div className="mega-feature"><span className="eyebrow">{mega.feature.eyebrow}</span><h4>{mega.feature.title}</h4><p>{mega.feature.copy}</p><Link href={mega.feature.href} className="link-button solid">{mega.feature.label} <span className="arrow" aria-hidden="true">→</span></Link><Link href={item.href} className="text-link">View all {item.label.toLowerCase().replace('our ', '')} <span className="arrow" aria-hidden="true">→</span></Link></div>
           </div></div>
         </div>;
