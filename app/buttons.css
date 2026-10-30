@@ -57,25 +57,35 @@
    Style index ("01 Plantation Shutters ↓"): an even grid of tiles in
    place of free-wrapping pills, so rows never break 5 + 1.
    --------------------------------------------------------------------- */
-.collection-index { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; max-width:1080px; margin:34px auto 0; }
+.collection-index { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; max-width:1080px; margin:34px auto 0; }
 .collection-index a {
-  display:flex; align-items:center; gap:16px; min-height:68px; padding:12px 14px 12px 20px;
-  background:#fff; border:1px solid var(--line); border-radius:16px; color:var(--ink);
-  font-size:var(--text-ui,15px); font-weight:600; line-height:1.3; text-align:left;
-  transition:border-color .25s ease,box-shadow .3s var(--ease),transform .3s var(--ease);
+  position:relative; overflow:hidden; isolation:isolate;
+  display:flex; align-items:center; gap:16px; min-height:74px; padding:14px 14px 14px 16px;
+  background:linear-gradient(180deg,#fff 0%,#fffaf6 100%); border:1px solid var(--line); border-radius:18px; color:var(--ink);
+  box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 10px 24px -20px rgba(31,41,51,.45);
+  font-size:var(--text-ui,15px); font-weight:600; letter-spacing:-.005em; line-height:1.3; text-align:left;
+  transition:border-color .3s ease,box-shadow .35s var(--ease),transform .35s var(--ease),color .3s ease;
 }
-.collection-index a>span:first-child { flex:none; box-sizing:border-box; width:46px; padding-right:16px; border-right:1px solid var(--line); font-size:12px; font-weight:700; letter-spacing:.06em; font-variant-numeric:tabular-nums; color:var(--accent-deep); }
-.collection-index a>span:last-child { flex:none; margin-left:auto; display:grid; place-items:center; width:34px; height:34px; border-radius:50%; background:var(--sand); color:var(--accent-deep); font-size:15px; transition:background-color .25s ease,color .25s ease,transform .3s var(--ease); }
-.collection-index a:hover { background:#fff; color:var(--ink); border-color:var(--primary); transform:translateY(-2px); box-shadow:0 16px 30px -22px rgba(31,41,51,.55); }
-.collection-index a:hover>span:first-child { color:var(--accent-deep); }
-.collection-index a:hover>span:last-child { background:var(--accent-deep); color:#fff; transform:translateY(2px); }
+/* accent bar that grows in from the left edge, plus a warm wash behind the tile */
+.collection-index a::before { content:''; position:absolute; left:0; top:14px; bottom:14px; width:3px; border-radius:0 3px 3px 0; background:var(--accent); transform:scaleY(0); transition:transform .35s var(--ease); }
+.collection-index a::after { content:''; position:absolute; inset:0; z-index:-1; background:radial-gradient(120% 140% at 0% 50%,var(--accent-soft) 0%,transparent 60%); opacity:0; transition:opacity .35s ease; }
+.collection-index a>span:first-child { flex:none; display:grid; place-items:center; width:42px; height:42px; border-radius:12px; background:var(--accent-soft); font-size:12px; font-weight:700; letter-spacing:.04em; font-variant-numeric:tabular-nums; color:var(--accent-deep); transition:background-color .3s ease,color .3s ease; }
+.collection-index a>span:last-child { flex:none; margin-left:auto; display:grid; place-items:center; width:36px; height:36px; border-radius:50%; border:1px solid var(--line); background:#fff; color:var(--accent-deep); font-size:15px; transition:background-color .3s ease,border-color .3s ease,color .3s ease,transform .35s var(--ease); }
+.collection-index a:hover,.collection-index a:focus-visible { background:#fff; color:var(--ink); border-color:color-mix(in srgb,var(--accent) 55%,var(--line)); transform:translateY(-3px); box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 22px 36px -24px rgba(194,95,31,.55); }
+.collection-index a:hover::before,.collection-index a:focus-visible::before { transform:scaleY(1); }
+.collection-index a:hover::after,.collection-index a:focus-visible::after { opacity:1; }
+.collection-index a:hover>span:first-child,.collection-index a:focus-visible>span:first-child { background:var(--accent); color:#fff; }
+.collection-index a:hover>span:last-child,.collection-index a:focus-visible>span:last-child { background:var(--accent-deep); border-color:var(--accent-deep); color:#fff; transform:translateY(3px); }
+.collection-index a:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
+.collection-index a:active { transform:translateY(-1px); }
 @media (max-width:950px) { .collection-index { grid-template-columns:repeat(2,minmax(0,1fr)); } }
 @media (max-width:767px) {
   .collection-index { grid-template-columns:1fr; gap:8px; margin-top:28px; }
   .collection-index a,.collection-index a:last-child { min-height:58px; padding:8px 10px 8px 16px; border-bottom:1px solid var(--line); border-radius:14px; }
+  .collection-index a>span:first-child { width:38px; height:38px; }
   .collection-index a>span:last-child { width:32px; height:32px; }
 }
 @media (prefers-reduced-motion:reduce) {
-  .link-button,.header-quote,.collection-index a,.collection-index a>span,.arrow { transition:none; }
+  .link-button,.header-quote,.collection-index a,.collection-index a>span,.collection-index a::before,.collection-index a::after,.arrow { transition:none; }
   .link-button:hover,.collection-index a:hover,.collection-index a:hover>span:last-child { transform:none; }
 }
