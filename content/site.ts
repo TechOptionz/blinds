@@ -5,7 +5,7 @@ export const site = {
 };
 export const navigation = [{ label: 'Home', href: '/' }, { label: 'Our Blinds', href: '/blinds' }, { label: 'Curtains', href: '/curtains' }, { label: 'Screens', href: '/screens' }, { label: 'Shutters', href: '/shutters' }, { label: 'Gallery', href: '/gallery' }, { label: 'About', href: '/about' }, { label: 'Contact', href: '/contact' }];
 export const home = {
-  hero: 'A considered collection of window blinds for spaces that feel as good as they look. Discover simple lines, softer light and a style that feels like home.',
+  hero: 'Window furnishings for homes that feel as good as they look. Explore blinds, curtains, screens and shutters chosen for the way light moves through your rooms.',
   introduction: 'The right window covering does more than complete a room. It shapes the daylight, creates a sense of privacy and brings everything into balance. We believe choosing blinds should feel inspiring, not overwhelming.',
   collection: 'From minimal roller blinds to soft, tailored folds, explore timeless styles for different rooms, moods and ways of living.',
   manifesto: 'They shape the light, soften the mood and bring a room together. Sometimes, the smallest design choice makes the biggest difference.',

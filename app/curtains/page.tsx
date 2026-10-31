@@ -1,26 +1,30 @@
 import Link from 'next/link';
-import { curtainDetails, curtains, curtainCategories, curtainHeadings, curtainFaqs } from '@/content/curtains';
+import { curtains, curtainCategories, curtainHeadings, curtainFaqs } from '@/content/curtains';
 import { ImagePlaceholder } from '@/components/ui/ImagePlaceholder';
 import { LinkButton } from '@/components/ui/LinkButton';
-import { SectionCTA } from '@/components/sections/Shared';
-import { CircleHero } from '@/components/sections/Feature';
+import { FaqSection, SectionCTA, SectionIntro } from '@/components/sections/Shared';
+import { PageHero } from '@/components/sections/Feature';
 import { pageMetadata } from '@/lib/metadata';
 
 export const metadata = pageMetadata('Curtains | Soft Texture & Considered Interiors', 'Explore curtain inspiration, soft fabrics and layered window treatments. Enquire about curtains for your space with Screens N Blinds.', '/curtains');
 
 export default function CurtainsPage() {
   return <>
-    <CircleHero image={curtains.hero} label="Curtains / A softer perspective" title={<>Softness. From ceiling <span className="accent">to floor.</span></>} copy={curtains.intro}><LinkButton href="/contact?product=curtains">Enquire About Curtains</LinkButton></CircleHero>
-    <section className="curtains-edit wrap" aria-labelledby="curtains-edit-title">
-      <div className="curtains-section-heading" data-reveal><span className="eyebrow">Find your feeling</span><h2 id="curtains-edit-title">One window.<br />So many possibilities.</h2><p>Start with the atmosphere you want to create. These design directions are a starting point for your enquiry.</p></div>
-      <nav className="collection-index" aria-label="Curtain categories">{curtainCategories.map(category => <a href={`#${category.slug}`} key={category.slug}><span>{category.number}</span>{category.name}<span aria-hidden="true">↓</span></a>)}</nav>
-      <p className="image-note">Explore the styles below, then ask about available fabrics, linings and finishes.</p>
+    <PageHero image={curtains.hero} label="Curtains" title={<>Softness, from ceiling <span className="accent">to floor.</span></>} copy={curtains.intro}><LinkButton href="/contact?product=curtains">Enquire About Curtains</LinkButton><LinkButton href="#curtain-styles" variant="outline">Browse the Styles</LinkButton></PageHero>
+    <section className="curtains-edit wrap section-space" id="curtain-styles" aria-labelledby="curtains-edit-title">
+      <SectionIntro label="Find your feeling" title={<span id="curtains-edit-title">One window. <span className="accent">So many possibilities.</span></span>} copy="Start with the atmosphere you want to create, then ask about fabrics, linings and finishes for your space." />
+      <div className="curtain-category-list">{curtainCategories.map(category => <article className="curtain-category" id={category.slug} key={category.slug} data-reveal>
+        <Link href={`/curtains/${category.slug}`} className="curtain-category-image" tabIndex={-1} aria-hidden="true"><ImagePlaceholder asset={category.image} sizes="(max-width: 640px) 100vw, (max-width: 1100px) 50vw, 33vw" /><span className="style-card-index">{category.number}</span></Link>
+        <div className="curtain-category-copy"><span className="style-card-headline">{category.headline}</span><h2>{category.name}</h2><LinkButton href={`/curtains/${category.slug}`} variant="text">Explore {category.name}</LinkButton></div>
+      </article>)}</div>
     </section>
-    <section className="curtain-category-list wrap" aria-label="Explore curtain types">{curtainCategories.map(category => <article className="curtain-category" id={category.slug} key={category.slug}><Link href={`/curtains/${category.slug}`} className="curtain-category-image" aria-label={`Explore ${category.name}`} data-mask><ImagePlaceholder asset={category.image} sizes="(max-width: 767px) 100vw, 50vw" /><span className="curtain-study-label">{category.name} / Inspiration</span></Link><div className="curtain-category-copy" data-reveal><span className="eyebrow">{category.number} / {category.mood}</span><h2>{category.name}</h2><h3>{category.headline}</h3><p>{curtainDetails[category.slug].teaser}</p><LinkButton href={`/curtains/${category.slug}`} variant="text">Explore {category.name}</LinkButton></div></article>)}</section>
-    <section className="curtain-heading-guide wrap"><div className="curtains-section-heading" data-reveal><span className="eyebrow">Choose the finishing detail</span><h2>The shape<br />of the fold.</h2><p>A heading changes how fabric falls and how the curtain feels. Explore these styles as options to discuss for your space.</p></div><div className="curtains-directions">{curtainHeadings.map(heading => <article key={heading.name} data-reveal><div className="heading-image" data-mask><ImagePlaceholder asset={heading.image} sizes="(max-width: 767px) 100vw, 30vw" /></div><h3>{heading.name}</h3><p>{heading.description}</p></article>)}</div></section>
-    <section className="curtains-details"><div className="wrap curtains-details-grid"><div className="curtains-detail-image" data-mask><ImagePlaceholder asset={curtains.detail} sizes="(max-width: 767px) 100vw, 45vw" /></div><div className="curtains-detail-copy"><span className="eyebrow" data-reveal>It’s all in the details</span><h2 data-reveal>A beautiful finish<br />starts here.</h2><div>{curtains.details.map(([title, text]) => <article key={title} data-reveal><h3>{title}</h3><p>{text}</p></article>)}</div><LinkButton href="/contact?product=curtains" variant="text">Tell Us About Your Space</LinkButton></div></div></section>
-    <section className="curtains-pairing wrap" data-reveal><div><span className="eyebrow">A considered combination</span><h2>Soft folds.<br />Clean lines.</h2></div><div><p>Discover how the structure of a blind can sit alongside the softer presence of curtains. Explore the collection to find your starting point.</p><LinkButton href="/blinds" variant="text">Explore Our Blinds</LinkButton></div></section>
-    <section className="curtain-faq wrap"><div data-reveal><span className="eyebrow">A little guidance</span><h2>Before you<br />choose.</h2></div><div>{curtainFaqs.map(([question, answer]) => <details key={question}><summary>{question}<span aria-hidden="true">+</span></summary><p>{answer}</p></details>)}</div></section>
+    <section className="curtain-heading-guide"><div className="wrap section-space">
+      <SectionIntro label="Choose the finishing detail" title={<>The shape <span className="accent">of the fold.</span></>} copy="A heading changes how fabric falls and how the curtain feels. Explore these styles as options to discuss for your space." />
+      <div className="curtains-directions">{curtainHeadings.map((heading, i) => <article key={heading.name} data-reveal><div className="heading-image" data-mask><ImagePlaceholder asset={heading.image} sizes="(max-width: 767px) 100vw, 30vw" /></div><span className="feature-num">0{i + 1}</span><h3>{heading.name}</h3><p>{heading.description}</p></article>)}</div>
+    </div></section>
+    <section className="curtains-details"><div className="wrap curtains-details-grid"><div className="curtains-detail-image" data-mask><ImagePlaceholder asset={curtains.detail} sizes="(max-width: 767px) 100vw, 45vw" /></div><div className="curtains-detail-copy"><span className="eyebrow" data-reveal>It’s all in the details</span><h2 data-reveal>A beautiful finish <span className="accent">starts here.</span></h2><div>{curtains.details.map(([title, text], i) => <article key={title} data-reveal><span className="feature-num">0{i + 1}</span><div><h3>{title}</h3><p>{text}</p></div></article>)}</div><LinkButton href="/contact?product=curtains" variant="light">Tell Us About Your Space</LinkButton></div></div></section>
+    <section className="curtains-pairing wrap section-space" data-reveal><div><span className="eyebrow">A considered combination</span><h2>Soft folds. <span className="accent">Clean lines.</span></h2></div><div><p className="lead">The structure of a blind sits beautifully alongside the softer presence of curtains. Explore the collection to find your starting point.</p><LinkButton href="/blinds" variant="outline">Explore Our Blinds</LinkButton></div></section>
+    <FaqSection label="A little guidance" title={<>Before you <span className="accent">choose.</span></>} faqs={curtainFaqs} />
     <SectionCTA title="Make room for a softer view." copy="Tell us about your windows, the light and the look you have in mind. Ask about fabrics, finishes and options for your space." label="Enquire About Curtains" href="/contact?product=curtains" />
   </>;
 }
