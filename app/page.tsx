@@ -51,7 +51,6 @@ export default function Home() {
         <h2>Every window, <span className="accent">one conversation.</span></h2>
         <p className="lead">{about.lead}</p>
         <LinkButton href="/contact" variant="light">Request a Quote</LinkButton>
-        <div className="why-image" data-mask><ImagePlaceholder asset={images.cta} sizes="(max-width: 950px) 100vw, 40vw" /></div>
       </div>
       <ol className="why-list">{home.reasons.map(([title], i) => <li key={title} data-reveal><span>0{i + 1}</span><h3>{title}</h3></li>)}</ol>
     </div></section>

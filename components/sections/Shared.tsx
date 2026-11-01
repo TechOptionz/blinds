@@ -7,6 +7,7 @@ import { curtainCategories } from '@/content/curtains';
 import { catalogue, catalogueImage } from '@/content/catalogue';
 import { ImagePlaceholder } from '@/components/ui/ImagePlaceholder';
 import { LinkButton } from '@/components/ui/LinkButton';
+import { Carousel } from '@/components/sections/Carousel';
 export function PageHeading({ label, title, description, children }: { label: string; title: ReactNode; description?: string; children?: ReactNode }) {
   return <section className="page-heading"><div className="wrap page-heading-inner"><div><span className="eyebrow" data-entrance>{label}</span><h1 data-entrance>{title}</h1></div>{(description || children) && <div className="page-heading-aside" data-entrance>{description && <p className="lead">{description}</p>}{children}</div>}</div></section>;
 }
@@ -43,7 +44,7 @@ export function ProductShowcase() {
 }
 export type RelatedItem = { href: string; name: string; meta: string; image: ImageAsset };
 export function RelatedStyles({ label = 'Keep exploring', title, items }: { label?: string; title: string; items: RelatedItem[] }) {
-  return <section className="related wrap section-space"><SectionIntro label={label} title={title} /><div className="related-grid">{items.map(item => <Link href={item.href} key={item.href} className="related-card" data-reveal><div className="related-thumb"><ImagePlaceholder asset={item.image} sizes="(max-width: 767px) 70vw, 22vw" /></div><small>{item.meta}</small><h3>{item.name} <span className="arrow" aria-hidden="true">→</span></h3></Link>)}</div></section>;
+  return <section className="related wrap section-space"><Carousel label="styles" head={<SectionIntro label={label} title={title} />}>{items.map(item => <Link href={item.href} key={item.href} className="related-card" data-reveal><div className="related-thumb"><ImagePlaceholder asset={item.image} sizes="(max-width: 767px) 70vw, 22vw" /></div><small>{item.meta}</small><h3>{item.name} <span className="arrow" aria-hidden="true">→</span></h3></Link>)}</Carousel></section>;
 }
 export function FaqSection({ label = 'Before you choose', title, faqs }: { label?: string; title: ReactNode; faqs: string[][] }) {
   return <section className="curtain-faq wrap section-space"><div className="faq-head" data-reveal><span className="eyebrow">{label}</span><h2>{title}</h2><p>Still unsure? <Link href="/contact" className="text-link">Ask us directly <span className="arrow" aria-hidden="true">→</span></Link></p></div><div className="faq-list">{faqs.map(([question, answer], i) => <details key={question}><summary><span className="faq-index">0{i + 1}</span>{question}<span className="faq-toggle" aria-hidden="true" /></summary><p>{answer}</p></details>)}</div></section>;
